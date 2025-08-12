@@ -2,8 +2,14 @@ import "./loadEnv.js";
 import { Hono } from 'hono'
 import { serveStatic } from '@hono/node-server/serve-static'
 import { serve } from '@hono/node-server';
+import envLocal from '../../env.json' assert { type: 'json' };
 
 const app = new Hono();
+const ENV = process.env.NETLIFY ? {
+  JWT_SECRET: process.env.JWT_SECRET,
+  DB_CONNECTION: process.env.POSTGRESQL_DATABASE_CONNECTION_STRING,
+  API_URL: process.env.API_URL
+} : envLocal;
 
 app.get('_api/job',async c => {
   try {
@@ -154,5 +160,5 @@ app.get("*", async (c, next) => {
   return serveStatic({ path: "./dist/index.html" })(c, next);
 });
 serve({ fetch: app.fetch, port: 3344 });
-console.log("Running at http://localhost:3344")
+console.log(`Running at http://localhost:3344`)
       
