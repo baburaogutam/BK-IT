@@ -1,0 +1,238 @@
+.partnersSection {
+  width: 100%;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.partnersSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, color-mix(in srgb, var(--primary) 5%, transparent) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, color-mix(in srgb, var(--secondary) 5%, transparent) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-16) var(--spacing-8);
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-16);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-4);
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.partnerCategories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+}
+
+.categoryTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin: 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.categoryIcon {
+  font-size: 2rem;
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.partnerCard {
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  transition: all var(--animation-duration-normal) ease;
+  animation: fadeInScale 0.6s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
+  position: relative;
+  overflow: hidden;
+}
+
+.partnerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    color-mix(in srgb, var(--primary) 10%, transparent), 
+    transparent);
+  transition: left var(--animation-duration-slow) ease;
+}
+
+.partnerCard:hover::before {
+  left: 100%;
+}
+
+.partnerCard:hover {
+  transform: translateY(-0.25rem) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--primary) 20%, var(--border));
+}
+
+.logoContainer {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--spacing-2);
+  border: 1px solid var(--border);
+}
+
+.partnerLogo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter var(--animation-duration-normal) ease;
+}
+
+.partnerCard:hover .partnerLogo {
+  filter: grayscale(0%);
+}
+
+.partnerInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: center;
+}
+
+.partnerName {
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+  text-align: center;
+}
+
+.categoryBadge {
+  font-size: 0.75rem;
+}
+
+.partnershipCTA {
+  text-align: center;
+  margin-top: var(--spacing-16);
+  padding: var(--spacing-12);
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, var(--primary) 8%, var(--background)) 0%, 
+    color-mix(in srgb, var(--secondary) 8%, var(--background)) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.ctaTitle {
+  font-family: var(--font-family-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 var(--spacing-3);
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+  
+  .partnersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-4);
+  }
+  
+  .partnerCard {
+    padding: var(--spacing-4);
+  }
+  
+  .logoContainer {
+    width: 100px;
+    height: 50px;
+  }
+  
+  .partnershipCTA {
+    padding: var(--spacing-8);
+  }
+}

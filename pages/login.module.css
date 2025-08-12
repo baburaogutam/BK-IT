@@ -1,0 +1,46 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  padding: var(--spacing-4);
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--surface);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+}
+
+.logo {
+  display: inline-block;
+  margin-bottom: var(--spacing-4);
+  color: var(--primary);
+}
+
+.logoIcon {
+  color: var(--primary);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: var(--spacing-1);
+  color: var(--muted-foreground);
+  font-size: var(--font-size-base);
+}
