@@ -10,12 +10,12 @@ export async function handle(request: Request) {
 
     if (user.role !== "admin") {
       return new Response(
-        superjson.stringify({ error: "Unauthorized: Admins only" }),
+        JSON.stringify({ error: "Unauthorized: Admins only" }),
         { status: 403 }
       );
     }
 
-    const json = superjson.parse(await request.text());
+    const json = JSON.parse(await request.text());
     const input = schema.parse(json);
 
     const [newJobFromDb] = await db
@@ -34,7 +34,7 @@ export async function handle(request: Request) {
       experienceLevel: newJobFromDb.experienceLevel as ExperienceLevel,
     };
 
-    return new Response(superjson.stringify(newJob satisfies OutputType), {
+    return new Response(JSON.stringify(newJob satisfies OutputType), {
       headers: { "Content-Type": "application/json" },
       status: 201,
     });
@@ -42,7 +42,7 @@ export async function handle(request: Request) {
     console.error("Error creating job:", error);
     const errorMessage =
       error instanceof Error ? error.message : "An unknown error occurred";
-    return new Response(superjson.stringify({ error: errorMessage }), {
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 400,
     });
   }

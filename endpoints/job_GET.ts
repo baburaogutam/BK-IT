@@ -1,6 +1,5 @@
 import { db } from "../helpers/postgresqlDatabaseDb";
 import { schema, OutputType } from "./job_GET.schema";
-import superjson from "superjson";
 import { z } from "zod";
 import type { JobType, ExperienceLevel } from "../helpers/postgresqlDatabaseSchema";
 
@@ -22,7 +21,7 @@ export async function handle(request: Request) {
 
     if (!jobFromDb) {
       return new Response(
-        superjson.stringify({ error: "Job not found or is not active" }),
+        JSON.stringify({ error: "Job not found or is not active" }),
         { status: 404 }
       );
     }
@@ -36,7 +35,7 @@ export async function handle(request: Request) {
 
     const response: OutputType = { job };
 
-    return new Response(superjson.stringify(response), {
+    return new Response(JSON.stringify(response), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
@@ -47,7 +46,7 @@ export async function handle(request: Request) {
         : error instanceof Error
           ? error.message
           : "An unknown error occurred";
-    return new Response(superjson.stringify({ error: errorMessage }), {
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 400,
     });
   }

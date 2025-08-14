@@ -1,7 +1,5 @@
 import { db } from "../helpers/postgresqlDatabaseDb";
 import { schema, OutputType } from "./jobs_GET.schema";
-import superjson from "superjson";
-import { sql } from "kysely";
 import type { JobType, ExperienceLevel } from "../helpers/postgresqlDatabaseSchema";
 
 export async function handle(request: Request) {
@@ -93,13 +91,13 @@ export async function handle(request: Request) {
       totalCount: Number(count),
     };
 
-    return new Response(superjson.stringify(response), {
+    return new Response(JSON.stringify(response), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
     console.error("Error fetching jobs:", error);
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
-    return new Response(superjson.stringify({ error: errorMessage }), {
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 400,
     });
   }

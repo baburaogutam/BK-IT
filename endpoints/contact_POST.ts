@@ -6,10 +6,10 @@ import { ZodError } from "zod";
 export async function handle(request: Request): Promise<Response> {
   try {
     if (request.method !== 'POST') {
-      return new Response(superjson.stringify({ error: 'Method not allowed' }), { status: 405 });
+      return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
     }
 
-    const json = superjson.parse(await request.text());
+    const json = JSON.parse(await request.text());
     const validatedInput = schema.parse(json);
 
     await db
@@ -24,7 +24,7 @@ export async function handle(request: Request): Promise<Response> {
       .execute();
 
     const response: OutputType = { success: true, message: "Your inquiry has been submitted successfully." };
-    return new Response(superjson.stringify(response), {
+    return new Response(JSON.stringify(response), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -32,15 +32,15 @@ export async function handle(request: Request): Promise<Response> {
   } catch (error) {
     if (error instanceof ZodError) {
       console.error("Validation error in contact form submission:", error.errors);
-      return new Response(superjson.stringify({ error: "Invalid input.", details: error.flatten() }), { status: 400 });
+      return new Response(JSON.stringify({ error: "Invalid input.", details: error.flatten() }), { status: 400 });
     }
     
     if (error instanceof Error) {
       console.error("Error processing contact form submission:", error);
-      return new Response(superjson.stringify({ error: "An unexpected error occurred." }), { status: 500 });
+      return new Response(JSON.stringify({ error: "An unexpected error occurred." }), { status: 500 });
     }
 
     console.error("Unknown error processing contact form submission:", error);
-    return new Response(superjson.stringify({ error: "An unknown error occurred." }), { status: 500 });
+    return new Response(JSON.stringify({ error: "An unknown error occurred." }), { status: 500 });
   }
 }

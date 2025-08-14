@@ -40,12 +40,12 @@
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
-  color: var(--foreground);
+  color: var(--primary);
   margin-bottom: var(--spacing-4);
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--accent) 100%);
+  /* background: linear-gradient(135deg, var(--foreground) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text; */
 }
 
 .subtitle {
@@ -83,7 +83,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  background: linear-gradient(90deg, var(--primary));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--animation-duration-slow) ease;

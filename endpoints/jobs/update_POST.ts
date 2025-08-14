@@ -11,18 +11,18 @@ export async function handle(request: Request) {
 
     if (user.role !== "admin") {
       return new Response(
-        superjson.stringify({ error: "Unauthorized: Admins only" }),
+        JSON.stringify({ error: "Unauthorized: Admins only" }),
         { status: 403 }
       );
     }
 
-    const json = superjson.parse(await request.text());
+    const json = JSON.parse(await request.text());
     const { jobId, ...updateData } = schema.parse(json);
 
     // Check if there's anything to update
     if (Object.keys(updateData).length === 0) {
       return new Response(
-        superjson.stringify({ error: "No update data provided" }),
+        JSON.stringify({ error: "No update data provided" }),
         { status: 400 }
       );
     }
@@ -39,7 +39,7 @@ export async function handle(request: Request) {
 
     if (!updatedJobFromDb) {
       return new Response(
-        superjson.stringify({ error: "Job not found" }),
+        JSON.stringify({ error: "Job not found" }),
         { status: 404 }
       );
     }
@@ -51,7 +51,7 @@ export async function handle(request: Request) {
       experienceLevel: updatedJobFromDb.experienceLevel as ExperienceLevel,
     };
 
-    return new Response(superjson.stringify(updatedJob satisfies OutputType), {
+    return new Response(JSON.stringify(updatedJob satisfies OutputType), {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
@@ -62,7 +62,7 @@ export async function handle(request: Request) {
         : error instanceof Error
           ? error.message
           : "An unknown error occurred";
-    return new Response(superjson.stringify({ error: errorMessage }), {
+    return new Response(JSON.stringify({ error: errorMessage }), {
       status: 400,
     });
   }

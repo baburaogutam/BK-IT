@@ -1,5 +1,4 @@
 import { z } from "zod";
-import superjson from "superjson";
 import type { Selectable } from "kysely";
 import type { Jobs } from "../helpers/postgresqlDatabaseSchema";
 import { JobTypeArrayValues, ExperienceLevelArrayValues } from "../helpers/postgresqlDatabaseSchema";
@@ -15,11 +14,15 @@ export const schema = z.object({
 
 export type InputType = z.infer<typeof schema>;
 
-export type OutputType = {
-  jobs: Selectable<Jobs>[];
-  totalCount: number;
-};
-
+// export type OutputType = {
+//   jobs: Selectable<Jobs>[];
+//   totalCount: number;
+// };
+const outputSchema = z.object({
+  jobs:z.array(z.any()),
+  totalCount:z.number(),
+})
+export type OutputType = z.infer<typeof outputSchema>;
 export const getJobs = async (
   params: InputType,
   init?: RequestInit
@@ -42,9 +45,9 @@ export const getJobs = async (
   });
 
   if (!result.ok) {
-        const errorObject = superjson.parse(await result.text()) as any;
+        const errorObject = JSON.parse(await result.text()) as any;
     throw new Error(errorObject.error || "Failed to fetch jobs");
   }
 
-  return superjson.parse<OutputType>(await result.text());
+  return JSON.parse(await result.text());
 };

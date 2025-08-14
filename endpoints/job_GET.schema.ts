@@ -1,5 +1,4 @@
 import { z } from "zod";
-import superjson from "superjson";
 import type { Selectable } from "kysely";
 import type { Jobs } from "../helpers/postgresqlDatabaseSchema";
 
@@ -30,10 +29,10 @@ export const getJob = async (
   });
 
   if (!result.ok) {
-    const errorObject = superjson.parse(await result.text()) as any;
+    const errorObject = JSON.parse(await result.text()) as any;
     console.log(result)
     throw new Error(errorObject.error || "Failed to fetch job");
   }
 
-  return superjson.parse<OutputType>(await result.text());
+  return JSON.parse(await result.text());
 };

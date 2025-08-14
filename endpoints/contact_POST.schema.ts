@@ -1,5 +1,4 @@
 import { z } from "zod";
-import superjson from 'superjson';
 
 export const schema = z.object({
   name: z.string().min(1, { message: "Name is required." }),
@@ -21,7 +20,7 @@ export const postContact = async (body: InputType, init?: RequestInit): Promise<
   const validatedInput = schema.parse(body);
   const result = await fetch(`/_api/contact`, {
     method: "POST",
-    body: superjson.stringify(validatedInput),
+    body: JSON.stringify(validatedInput),
     ...init,
     headers: {
       "Content-Type": "application/json",
@@ -29,8 +28,8 @@ export const postContact = async (body: InputType, init?: RequestInit): Promise<
     },
   });
     if (!result.ok) {
-    const errorObject = superjson.parse(await result.text()) as any;
+    const errorObject = JSON.parse(await result.text()) as any;
     throw new Error(errorObject.error || "Failed to submit contact form.");
   }
-  return superjson.parse<OutputType>(await result.text());
+  return JSON.parse(await result.text());
 };
