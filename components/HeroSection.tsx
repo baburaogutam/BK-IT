@@ -41,7 +41,7 @@ export const HeroSection = () => {
         <div className={styles.imageWrapper}>
           <div className={styles.imageContainer}>
             <img
-            src="pages/bkitMainImage3.png"
+            src="./pages/bkitMainImage3.png"
               //src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
               alt="A team of young Indian professionals collaborating in a modern office."
               className={styles.heroImage}
