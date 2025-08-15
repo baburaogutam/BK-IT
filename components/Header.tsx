@@ -63,9 +63,9 @@ export const Header = () => {
           )}
           {authState.type === "unauthenticated" && (
             <>
-              <Button variant="outline" size="sm" asChild>
+              {/* <Button variant="outline" size="sm" asChild>
                 <Link to="/login">Login</Link>
-              </Button>
+              </Button> */}
               {/* <Button size="sm">Sign Up</Button> */}
             </>
           )}
@@ -151,9 +151,9 @@ export const Header = () => {
                 )}
                 {authState.type === "unauthenticated" && (
                   <>
-                    <Button variant="outline" size="sm" asChild>
+                    {/* <Button variant="outline" size="sm" asChild>
                       <Link to="/login" onClick={closeMobileMenu}>Login</Link>
-                    </Button>
+                    </Button> */}
                     {/* <Button size="sm" onClick={closeMobileMenu}>Sign Up</Button> */}
                   </>
                 )}
