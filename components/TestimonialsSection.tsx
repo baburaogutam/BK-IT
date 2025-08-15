@@ -23,7 +23,7 @@ const testimonials = [
     type: "college",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
     content: "Our partnership with BKIT Solutions has significantly improved our students' industry readiness. Their training modules are perfectly aligned with current market demands, resulting in 95% placement success.",
-    rating: 5
+    rating: 4.2
   },
   {
     id: 3,

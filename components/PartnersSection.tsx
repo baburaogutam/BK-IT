@@ -171,9 +171,9 @@ export const PartnersSection = () => {
         </div>
 
         <div className={styles.partnershipCTA}>
-          <h3 className={styles.ctaTitle}>Interested in Partnership?</h3>
+          <h3 className={styles.ctaTitle}>Hire From Us</h3>
           <p className={styles.ctaDescription}>
-            Join our network of partners and help shape the future of tech education in India.
+            Tap into our pool of skilled, job-ready talent and empower your organization with the next generation of tech professionals.
           </p>
         </div>
       </div>

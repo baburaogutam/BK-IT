@@ -22,11 +22,12 @@ import {
 import { useContactMutation } from "../helpers/useContactMutation";
 import { schema as contactSchema } from "../endpoints/contact_POST.schema";
 import styles from "./ContactSection.module.css";
-import { Mail, Phone, Globe, Send } from "lucide-react";
+import { Mail, Phone, Globe, Send, Linkedin, Instagram } from "lucide-react";
 
 const services = [
   "College & Corporate Trainings",
   "Placement Support",
+  "Hire From BKIT",
   "Industry Connects",
   "IT Solutions",
   "Other",
@@ -91,6 +92,24 @@ export const ContactSection = () => {
             >
               <Globe size={20} />
               <span>bkitsolutions.in</span>
+            </a>
+            <a 
+            href="https://www.linkedin.com/company/bk-itsolutions/"
+            target="_blank"
+            className={styles.contactItem}
+            >
+            <Linkedin size={20}/>
+            <span>BK-IT Solutions</span>
+
+            </a>
+            <a 
+            href=""
+            target="_blank"
+            className={styles.contactItem}
+            >
+            <Instagram size={20}/>
+            <span>BKIT Solutions</span>
+
             </a>
           </div>
         </div>

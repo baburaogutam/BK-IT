@@ -11,7 +11,7 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
 
-export type JobType = "contract" | "full-time" | "internship" | "part-time";
+export type JobType = "Contract" | "Full-time" | "Internship" | "Part-time";
 
 export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 

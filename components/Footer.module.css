@@ -100,3 +100,48 @@
   font-size: 0.875rem;
   color: var(--muted-foreground);
 }
+@media (max-width: 640px) {
+  .footer .container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .footer .mainContent {
+    grid-template-columns: 1fr;       
+    gap: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+    text-align: center;
+  }
+
+  
+  .footer .mainContent > * { 
+    min-width: 0; 
+  }
+
+  .about {
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+
+  .logo { justify-content: center; }
+  .logoIcon { width: 32px; height: 32px; }
+  .logoText { font-size: 1rem; }
+
+  .description {
+    max-width: 100%;
+    font-size: 0.875rem;
+    margin: 0 auto;
+    word-break: break-word;          
+  }
+
+  .linksGrid {
+    grid-template-columns: 1fr;       
+    gap: var(--spacing-6);
+  }
+
+  .linkColumn { align-items: center; }
+  .columnTitle { font-size: 0.9375rem; }
+  .link { font-size: 0.875rem; }
+
+  .bottomBar { padding: var(--spacing-4) 0; }
+  .copyright { font-size: 0.75rem; }
+}

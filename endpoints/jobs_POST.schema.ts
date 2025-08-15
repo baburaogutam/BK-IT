@@ -15,7 +15,7 @@ export const schema = z.object({
   requirements: z.string().min(10, "Requirements must be at least 10 characters long"),
   benefits: z.string().optional().nullable(),
   applicationUrl: z.string().url("Must be a valid URL").optional().nullable(),
-  contactEmail: z.string().email("Must be a valid email").optional().nullable(),
+  contactEmail: z.string().email("Must be a valid email").optional().or((z.literal(""))),
   isActive: z.boolean().optional().default(true),
 });
 

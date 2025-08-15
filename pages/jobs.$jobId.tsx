@@ -5,7 +5,7 @@ import { useGetJobById } from "../helpers/useJobsQueries";
 import { Skeleton } from "../components/Skeleton";
 import { Button } from "../components/Button";
 import { Badge } from "../components/Badge";
-import { AlertTriangle, ArrowLeft, Briefcase, MapPin, DollarSign, ExternalLink, Mail, Clock } from "lucide-react";
+import { AlertTriangle, ArrowLeft, Briefcase, MapPin, DollarSign, ExternalLink, Mail, Clock, IndianRupee } from "lucide-react";
 import styles from "./jobs.$jobId.module.css";
 import { formatDistanceToNow } from 'date-fns';
 
@@ -107,7 +107,7 @@ const JobDetailsPage = () => {
         <div className={styles.badgeContainer}>
           <Badge><Briefcase size={14} /> {job.jobType}</Badge>
           <Badge variant="secondary"><MapPin size={14} /> {job.location}</Badge>
-          <Badge variant="success"><DollarSign size={14} /> {job.experienceLevel}</Badge>
+          <Badge variant="success"><IndianRupee size={14} /> {job.experienceLevel}</Badge>
           {job.salaryRange && <Badge variant="warning">{job.salaryRange}</Badge>}
         </div>
 
