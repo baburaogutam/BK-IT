@@ -14,7 +14,7 @@ export default function IndexPage() {
   return (
     <>
       <Helmet>
-        <title>BKIT Solutions | Next-Gen IT Training & Solutions</title>
+        <title>BKIT Solutions</title>
         <meta
           name="description"
           content="BKIT Solutions offers premier college and corporate training, placement support, and custom IT solutions to build the next generation of developers in India."

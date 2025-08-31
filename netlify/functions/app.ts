@@ -30,30 +30,30 @@ app.post('/_api/contact', async (c) => {
   return endpoint(c.req.raw)
 })
 
-app.post('/_api/auth/logout', async (c) => {
-  const { handle: endpoint } = await import('../../endpoints/auth/logout_POST.js')
-  return endpoint(c.req.raw)
-})
+// app.post('/_api/auth/logout', async (c) => {
+//   const { handle: endpoint } = await import('../../endpoints/auth/logout_POST.js')
+//   return endpoint(c.req.raw)
+// })
 
-app.post('/_api/jobs/delete', async (c) => {
-  const { handle: endpoint } = await import('../../endpoints/jobs/delete_POST.js')
-  return endpoint(c.req.raw)
-})
+// app.post('/_api/jobs/delete', async (c) => {
+//   const { handle: endpoint } = await import('../../endpoints/jobs/delete_POST.js')
+//   return endpoint(c.req.raw)
+// })
 
-app.post('/_api/jobs/update', async (c) => {
-  const { handle: endpoint } = await import('../../endpoints/jobs/update_POST.js')
-  return endpoint(c.req.raw)
-})
+// app.post('/_api/jobs/update', async (c) => {
+//   const { handle: endpoint } = await import('../../endpoints/jobs/update_POST.js')
+//   return endpoint(c.req.raw)
+// })
 
-app.post('/_api/auth/login_with_password', async (c) => {
-  const { handle: endpoint } = await import('../../endpoints/auth/login_with_password_POST.js')
-  return endpoint(c.req.raw)
-})
+// app.post('/_api/auth/login_with_password', async (c) => {
+//   const { handle: endpoint } = await import('../../endpoints/auth/login_with_password_POST.js')
+//   return endpoint(c.req.raw)
+// })
 
-app.post('/_api/auth/register_with_password', async (c) => {
-  const { handle: endpoint } = await import('../../endpoints/auth/register_with_password_POST.js')
-  return endpoint(c.req.raw)
-})
+// app.post('/_api/auth/register_with_password', async (c) => {
+//   const { handle: endpoint } = await import('../../endpoints/auth/register_with_password_POST.js')
+//   return endpoint(c.req.raw)
+// })
 
 // Export the Netlify Function handler (no serve(), no static)
 export const handler = handle(app)

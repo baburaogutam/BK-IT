@@ -57,7 +57,7 @@ export const Header = () => {
         </nav>
 
         {/* Desktop Actions */}
-        <div className={styles.actions}>
+        {/* <div className={styles.actions}>
           {authState.type === "loading" && (
             <div className={styles.loadingPlaceholder}></div>
           )}
@@ -67,9 +67,9 @@ export const Header = () => {
                 <Link to="/login">Login</Link>
               </Button>
               {/* <Button size="sm">Sign Up</Button> */}
-            </>
-          )}
-          {authState.type === "authenticated" && (
+            {/* </> */}
+          
+          {/* {authState.type === "authenticated" && (
             <div className={styles.userActions}>
               <span className={styles.userName}>
                 <User size={16} />
@@ -84,8 +84,8 @@ export const Header = () => {
                 Logout
               </Button>
             </div>
-          )}
-        </div>
+          )} */}
+        {/* </div> */} 
 
         {/* Mobile Hamburger Button */}
         <button 
@@ -145,7 +145,7 @@ export const Header = () => {
               </nav>
 
               {/* Mobile Actions */}
-              <div className={styles.mobileActions}>
+              {/* <div className={styles.mobileActions}>
                 {authState.type === "loading" && (
                   <div className={styles.loadingPlaceholder}></div>
                 )}
@@ -155,9 +155,9 @@ export const Header = () => {
                       <Link to="/login" onClick={closeMobileMenu}>Login</Link>
                     </Button>
                     {/* <Button size="sm" onClick={closeMobileMenu}>Sign Up</Button> */}
-                  </>
-                )}
-                {authState.type === "authenticated" && (
+                  {/* </> */}
+                {/* )} */}
+                {/* {authState.type === "authenticated" && (
                   <div className={styles.mobileUserActions}>
                     <span className={styles.userName}>
                       <User size={16} />
@@ -171,9 +171,9 @@ export const Header = () => {
                       <LogOut size={16} />
                       Logout
                     </Button>
-                  </div>
-                )}
-              </div>
+                  </div> */}
+                {/* )} */}
+              {/* </div> */}
             </div>
           </>
         )}
