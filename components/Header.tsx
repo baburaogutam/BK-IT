@@ -37,6 +37,9 @@ export const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
+          <Link to="/#team" className={styles.navLink}>
+            Our Team
+          </Link>
           <Link to="/#services" className={styles.navLink}>
             Services
           </Link>
@@ -105,6 +108,12 @@ export const Header = () => {
             />
             <div className={styles.mobileMenu}>
               <nav className={styles.mobileNav}>
+                <Link to="/#team"
+                className={styles.mobileNavLink}
+                onClick={closeMobileMenu}
+                >
+                Our Team
+                </Link>
                 <Link 
                   to="/#services" 
                   className={styles.mobileNavLink}

@@ -58,22 +58,40 @@ const partners = [
     type: "technology"
   },
   {
-    name: "VIT University",
-    logo: "https://findlogovector.com/wp-content/uploads/2022/05/vellore-institute-of-technology-vit-logo-vector-2022.png",
+    name: "Sri Indhu Engineering College",
+    logo: "https://cdn.universitykart.com//Content/upload/admin/ffp1xy2s.hyj.jpeg",
     category: "Academic Partner",
     type: "academic"
   },
   {
-    name: "SRM University",
-    logo: "https://images.seeklogo.com/logo-png/38/1/srm-institute-of-science-and-technology-logo-png_seeklogo-381994.png",
+    name: "St.Marys Engineering College",
+    logo: "https://image-static.collegedunia.com/public/college_data/images/logos/1560227941logo.png",
     category: "Academic Partner",
     type: "academic"
   },
   {
-    name: "KL University",
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/78/KL_University_logo.svg/375px-KL_University_logo.svg.png",
+    name: "Chadhalwada Engineering College",
+    logo: "https://crectirupati.ac.in/wp-content/uploads/2021/09/CREC-1.jpg",
     category: "Academic Partner",
     type: "academic"
+  },
+  {
+    name:"Vemu Institute of Technology",
+    logo:"https://cdn.universitykart.com//Content/upload/admin/ojqijync.4wz.jpg",
+    category:"Academic Partner",
+    type:"academic"
+  },
+  {
+    name:"Shanthiram Engineering College",
+    logo:"https://www.srecnandyal.edu.in/images/sreclogo.jpg",
+    category:"Academic Partner",
+    type:"academic"
+  },
+  {
+    name:"Rajeev Gandhi Memorial (RGM) College",
+    logo:"https://cdn.universitykart.com//Content/upload/admin/3lfqctwx.d5f.jpg",
+    category:"Academic Partner",
+    type:"academic"
   }
 ];
 
