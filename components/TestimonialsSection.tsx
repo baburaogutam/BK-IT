@@ -7,51 +7,51 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Priya Sharma",
+    name: "Praneeth",
     role: "Software Engineer",
-    company: "TCS",
+    company: "Google",
     type: "student",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+    image: "",
     content: "BKIT Solutions transformed my career trajectory. Their comprehensive training program and placement support helped me land my dream job at TCS. The mentors were incredibly supportive throughout the journey.",
     rating: 5
   },
   {
     id: 2,
-    name: "Dr. Rajesh Kumar",
-    role: "Head of Computer Science",
-    company: "VIT University",
+    name: "Dr Yaswanth",
+    role: "Dean-CDC",
+    company: "Vemu Engineering College",
     type: "college",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+    image: "",
     content: "Our partnership with BKIT Solutions has significantly improved our students' industry readiness. Their training modules are perfectly aligned with current market demands, resulting in 95% placement success.",
     rating: 4.2
   },
   {
     id: 3,
-    name: "Amit Patel",
-    role: "HR Director",
-    company: "Infosys",
+    name: "D Tanushree",
+    role: "Sr Manager HR",
+    company: "PRM360",
     type: "corporate",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+    image: "",
     content: "BKIT Solutions has been our go-to partner for upskilling our development teams. Their corporate training programs are tailored, effective, and have measurably improved our team's productivity.",
     rating: 5
   },
   {
     id: 4,
-    name: "Sneha Reddy",
+    name: "Nikhil Sapa",
     role: "Full Stack Developer",
-    company: "Wipro",
+    company: "Value Momentum",
     type: "student",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+    image: "",
     content: "The hands-on approach and real-world projects at BKIT Solutions gave me the confidence to excel in my interviews. I'm now working as a Full Stack Developer at Wipro, thanks to their excellent guidance.",
     rating: 5
   },
   {
     id: 5,
-    name: "Prof. Meera Nair",
+    name: "Meera Nair",
     role: "Dean of Engineering",
-    company: "SRM University",
+    company: "RGM College",
     type: "college",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+    image: "",
     content: "BKIT Solutions has revolutionized how we prepare our students for the industry. Their industry connect programs and hackathons have created amazing opportunities for our students.",
     rating: 5
   },
@@ -61,7 +61,7 @@ const testimonials = [
     role: "Tech Lead",
     company: "HCL Technologies",
     type: "corporate",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+    image: "",
     content: "Working with BKIT Solutions for our team's skill enhancement has been exceptional. Their trainers understand both technical depth and practical application perfectly.",
     rating: 5
   }
