@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Building the Next Generation</span>
+            <span className={styles.gradientText}>Building the Future Generation</span>
             <br />
             of India's Tech Leaders
           </h1>
