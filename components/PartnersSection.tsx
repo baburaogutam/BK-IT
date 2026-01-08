@@ -65,18 +65,25 @@ export const PartnersSection = () => {
         </div>
 
         {/* CTA */}
-        <div className={styles.hireCTA}>
-          <div className={styles.hireContent}>
-            <h3>Hire From BKIT Solutions</h3>
-            <p>
-              Access job-ready, industry-trained professionals equipped with real-world skills and proven competencies.
-            </p>
-            <a href="/contact" className={styles.hireButton}>
-              Partner With Us →
-            </a>
-          </div>
-        </div>
-      </div>
+       <div className={styles.hireCTA}>
+  <div className={styles.hireInner}>
+    <h3 className={styles.hireTitle}>Hire From BKIT Solutions</h3>
+    <p className={styles.hireDescription}>
+      Access a pool of job-ready, industry-trained professionals equipped with
+      real-world skills and proven competencies.
+    </p>
+
+    <div className={styles.hireActions}>
+      <a href="/contact" className={styles.primaryBtn}>
+        Partner With Us →
+      </a>
+      <a href="/programs" className={styles.secondaryBtn}>
+        Explore Talent
+      </a>
+    </div>
+  </div>
+</div>
+
     </section>
   );
 };
