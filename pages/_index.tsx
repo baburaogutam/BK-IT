@@ -14,13 +14,18 @@ export default function IndexPage() {
   return (
     <>
       <Helmet>
-        <title>BKIT Solutions</title>
-        <meta
-          name="description"
-          content="BKIT Solutions offers premier college and corporate training, placement support, and custom IT solutions to build the next generation of developers in India."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Helmet>
+  <title>BKIT Solutions</title>
+
+  <meta
+    name="description"
+    content="BKIT Solutions offers premier college and corporate training, placement support, and custom IT solutions to build the next generation of developers in India."
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {/* Favicon */}
+  <link rel="icon" type="image/png" href="/bkitLogo.png" />
+</Helmet>
       <div className={styles.pageContainer}>
         <HeroSection />
         <main className={styles.mainContent}>
