@@ -1,92 +1,83 @@
 import React from "react";
-import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
-import styles from "./DetailedServicesSection.module.css";
+import styles from "./WhatWeOfferSection.module.css";
+import {
+  Target,
+  Users,
+  Briefcase,
+  Layers,
+  Rocket,
+  ShieldCheck,
+} from "lucide-react";
 
-const detailedServices = [
+const features = [
   {
-    value: "item-1",
-    trigger: "Campus Recruitment Preparation",
-    content:
-      "We meticulously prepare students for campus recruitment drives, focusing on aptitude, technical skills, and interview techniques to maximize their success rate with top companies.",
+    icon: Target,
+    title: "Outcome-Driven Training Model",
+    description:
+      "Our programs are designed with measurable outcomes, ensuring students gain job-ready skills aligned with industry needs.",
   },
   {
-    value: "item-2",
-    trigger: "Employee Skills Training",
-    content:
-      "Our corporate training programs are designed to upskill and reskill employees, enhancing productivity and adapting your workforce to the latest technological advancements.",
+    icon: Users,
+    title: "Strong Academic Partnerships",
+    description:
+      "We collaborate closely with colleges to complement academic learning with real-world exposure and skill development.",
   },
   {
-    value: "item-3",
-    trigger: "Custom College/Corporate Training",
-    content:
-      "We offer bespoke training modules tailored to the specific needs of your institution or company, ensuring relevant and impactful learning experiences.",
+    icon: Briefcase,
+    title: "Placement-Focused Approach",
+    description:
+      "From aptitude training to interview readiness, our structured process maximizes placement success.",
   },
   {
-    value: "item-4",
-    trigger: "Job Placement for Graduates",
-    content:
-      "Our dedicated placement cell works tirelessly to find and secure job opportunities for fresh graduates, connecting them with our extensive network of hiring partners.",
+    icon: Layers,
+    title: "Customized Learning Programs",
+    description:
+      "Tailor-made training modules for colleges, corporates, and institutions based on specific requirements.",
   },
   {
-    value: "item-5",
-    trigger: "Industry Connections & Hackathons",
-    content:
-      "We bridge the gap between academia and the corporate world by organizing campus events, hackathons with leading companies, and exclusive meetings between HR managers and colleges.",
+    icon: Rocket,
+    title: "Industry Exposure & Live Projects",
+    description:
+      "Students gain hands-on experience through industry projects, hackathons, and expert-led sessions.",
   },
   {
-    value: "item-6",
-    trigger: "Custom Software & Web Development",
-    content:
-      "Our IT solutions wing specializes in creating custom software and responsive websites that are scalable, secure, and tailored to your business objectives.",
-  },
-  {
-    value: "item-7",
-    trigger: "Digital Marketing & Mobile Apps",
-    content:
-      "We help businesses grow their online presence through strategic digital advertising and develop high-performance mobile applications for both Android and iOS platforms.",
+    icon: ShieldCheck,
+    title: "Trusted by Institutions & Employers",
+    description:
+      "Our credibility is built on long-term partnerships with colleges and corporate hiring partners.",
   },
 ];
 
-export const DetailedServicesSection = () => {
+export const WhatWeOfferSection = () => {
   return (
-    <section id="details" className={styles.detailsSection}>
+    <section id="details" className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
+        <header className={styles.header}>
           <h2 className={styles.title}>What We Offer</h2>
           <p className={styles.subtitle}>
-            A closer look at how we empower our partners and students.
+            A closer look at how BKIT Solutions empowers students, institutions,
+            and industry partners.
           </p>
-        </div>
-        <Accordion.Root
-          className={styles.accordionRoot}
-          type="single"
-          defaultValue="item-1"
-          collapsible
-        >
-          {detailedServices.map((service) => (
-            <Accordion.Item
-              key={service.value}
-              className={styles.accordionItem}
-              value={service.value}
-            >
-              <Accordion.Header className={styles.accordionHeader}>
-                <Accordion.Trigger className={styles.accordionTrigger}>
-                  {service.trigger}
-                  <ChevronDown
-                    className={styles.accordionChevron}
-                    aria-hidden
-                  />
-                </Accordion.Trigger>
-              </Accordion.Header>
-              <Accordion.Content className={styles.accordionContent}>
-                <div className={styles.accordionContentText}>
-                  {service.content}
+        </header>
+
+        <div className={styles.grid}>
+          {features.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.title} className={styles.featureCard}>
+                <div className={styles.iconWrap}>
+                  <Icon className={styles.icon} />
                 </div>
-              </Accordion.Content>
-            </Accordion.Item>
-          ))}
-        </Accordion.Root>
+                <div className={styles.content}>
+                  <h3 className={styles.featureTitle}>{item.title}</h3>
+                  <p className={styles.featureDescription}>
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
