@@ -1,8 +1,8 @@
 import React from "react";
-import { Avatar, AvatarImage, AvatarFallback } from "./Avatar";
-import { Badge } from "./Badge";
 import styles from "./TestimonialsSection.module.css";
 import { Quote } from "lucide-react";
+import { Avatar, AvatarFallback } from "./Avatar";
+import { Badge } from "./Badge";
 
 const testimonials = [
   {
@@ -11,29 +11,26 @@ const testimonials = [
     role: "Software Engineer",
     company: "Google",
     type: "student",
-    image: "",
-    content: "BKIT Solutions transformed my career trajectory. Their comprehensive training program and placement support helped me land my dream job at TCS. The mentors were incredibly supportive throughout the journey.",
-    rating: 5
+    content:
+      "BKIT Solutions transformed my career trajectory. Their structured training and placement support helped me confidently land my first role. The mentorship and guidance were exceptional.",
   },
   {
     id: 2,
     name: "Dr Yaswanth",
-    role: "Dean-CDC",
+    role: "Dean – CDC",
     company: "Vemu Engineering College",
     type: "college",
-    image: "",
-    content: "Our partnership with BKIT Solutions has significantly improved our students' industry readiness. Their training modules are perfectly aligned with current market demands, resulting in 95% placement success.",
-    rating: 4.2
+    content:
+      "BKIT Solutions has significantly improved our students’ industry readiness. Their outcome-driven programs consistently deliver measurable placement success.",
   },
   {
     id: 3,
-    name: "D Tanushree",
-    role: "Sr Manager HR",
+    name: "Tanushree D",
+    role: "Senior Manager – HR",
     company: "PRM360",
     type: "corporate",
-    image: "",
-    content: "BKIT Solutions has been our go-to partner for upskilling our development teams. Their corporate training programs are tailored, effective, and have measurably improved our team's productivity.",
-    rating: 5
+    content:
+      "Their corporate training programs are well-structured, relevant, and impactful. We’ve seen measurable improvements in team productivity and technical confidence.",
   },
   {
     id: 4,
@@ -41,9 +38,8 @@ const testimonials = [
     role: "Full Stack Developer",
     company: "Value Momentum",
     type: "student",
-    image: "",
-    content: "The hands-on approach and real-world projects at BKIT Solutions gave me the confidence to excel in my interviews. I'm now working as a Full Stack Developer at Wipro, thanks to their excellent guidance.",
-    rating: 5
+    content:
+      "The real-world projects and interview preparation at BKIT gave me confidence and clarity. I could clearly see the difference in how I approached interviews.",
   },
   {
     id: 5,
@@ -51,9 +47,8 @@ const testimonials = [
     role: "Dean of Engineering",
     company: "RGM College",
     type: "college",
-    image: "",
-    content: "BKIT Solutions has revolutionized how we prepare our students for the industry. Their industry connect programs and hackathons have created amazing opportunities for our students.",
-    rating: 5
+    content:
+      "BKIT Solutions has redefined how we prepare students for industry. Their industry connect programs and hackathons created genuine exposure and opportunity.",
   },
   {
     id: 6,
@@ -61,88 +56,56 @@ const testimonials = [
     role: "Tech Lead",
     company: "HCL Technologies",
     type: "corporate",
-    image: "",
-    content: "Working with BKIT Solutions for our team's skill enhancement has been exceptional. Their trainers understand both technical depth and practical application perfectly.",
-    rating: 5
-  }
+    content:
+      "Their trainers strike the perfect balance between theory and practical application. A reliable partner for long-term skill development.",
+  },
 ];
 
-const getTypeColor = (type: string) => {
-  switch (type) {
-    case 'student': return 'success';
-    case 'corporate': return 'default';
-    case 'college': return 'secondary';
-    default: return 'outline';
-  }
+const getBadge = (type: string) => {
+  if (type === "student") return "Student Success";
+  if (type === "college") return "Academic Partner";
+  return "Corporate Partner";
 };
-
-const getTypeLabel = (type: string) => {
-  switch (type) {
-    case 'student': return 'Student Success';
-    case 'corporate': return 'Corporate Partner';
-    case 'college': return 'Academic Partner';
-    default: return type;
-  }
-};
-
-interface TestimonialCardProps {
-  testimonial: typeof testimonials[0];
-  index: number;
-}
-
-const TestimonialCard = ({ testimonial, index }: TestimonialCardProps) => (
-  <div 
-    className={styles.testimonialCard}
-    style={{ animationDelay: `${index * 0.1}s` }}
-  >
-    <div className={styles.quoteIcon}>
-      <Quote size={24} />
-    </div>
-    <div className={styles.cardHeader}>
-      <Avatar>
-        <AvatarImage src={testimonial.image} alt={testimonial.name} />
-        <AvatarFallback>
-          {testimonial.name.split(' ').map(n => n[0]).join('')}
-        </AvatarFallback>
-      </Avatar>
-      <div className={styles.authorInfo}>
-        <h4 className={styles.authorName}>{testimonial.name}</h4>
-        <p className={styles.authorRole}>{testimonial.role}</p>
-        <p className={styles.authorCompany}>{testimonial.company}</p>
-      </div>
-      <Badge variant={getTypeColor(testimonial.type) as any}>
-        {getTypeLabel(testimonial.type)}
-      </Badge>
-    </div>
-    <blockquote className={styles.testimonialContent}>
-      "{testimonial.content}"
-    </blockquote>
-    <div className={styles.rating}>
-      {Array.from({ length: testimonial.rating }, (_, i) => (
-        <span key={i} className={styles.star}>★</span>
-      ))}
-    </div>
-  </div>
-);
 
 export const TestimonialsSection = () => {
   return (
-    <section className={styles.testimonialsSection}>
+    <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>What Our Partners Say</h2>
+        <header className={styles.header}>
+          <h2 className={styles.title}>Trusted by Students, Colleges & Corporates</h2>
           <p className={styles.subtitle}>
-            Hear from students, colleges, and corporate partners who have experienced 
-            the BKIT Solutions difference firsthand.
+            Real experiences from those who have partnered with BKIT Solutions
+            to achieve measurable outcomes.
           </p>
-        </div>
-        <div className={styles.testimonialsGrid}>
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard 
-              key={testimonial.id} 
-              testimonial={testimonial} 
-              index={index}
-            />
+        </header>
+
+        <div className={styles.grid}>
+          {testimonials.map((t) => (
+            <div key={t.id} className={styles.card}>
+              <div className={styles.cardHeader}>
+                <Avatar>
+                  <AvatarFallback>
+                    {t.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
+                  </AvatarFallback>
+                </Avatar>
+
+                <div className={styles.author}>
+                  <h4>{t.name}</h4>
+                  <p className={styles.role}>{t.role}</p>
+                  <p className={styles.company}>{t.company}</p>
+                </div>
+
+                <Badge variant="outline">{getBadge(t.type)}</Badge>
+              </div>
+
+              <div className={styles.quote}>
+                <Quote size={18} />
+                <p>{t.content}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
