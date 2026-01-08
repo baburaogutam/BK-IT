@@ -4,8 +4,12 @@
 
 .section {
   width: 100%;
-  padding: var(--spacing-16) 0;
-  background: var(--background);
+  padding: var(--spacing-18) 0;
+  background: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    color-mix(in srgb, var(--primary) 3%, var(--background)) 100%
+  );
 }
 
 .container {
@@ -20,13 +24,13 @@
 
 .header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto var(--spacing-14);
+  max-width: 760px;
+  margin: 0 auto var(--spacing-16);
 }
 
 .title {
   font-family: var(--font-family-heading);
-  font-size: 2.75rem;
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--foreground);
@@ -35,7 +39,7 @@
 
 .subtitle {
   font-size: 1.125rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--muted-foreground);
 }
 
@@ -45,7 +49,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-8);
 }
 
@@ -54,13 +58,14 @@
 ========================= */
 
 .featureCard {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-7);
   display: flex;
   gap: var(--spacing-5);
-  padding: var(--spacing-6);
 
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 
   transition:
     transform var(--animation-duration-normal) ease,
@@ -69,9 +74,9 @@
 }
 
 .featureCard:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: color-mix(in srgb, var(--primary) 25%, var(--border));
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
 }
 
 /* =========================
@@ -79,21 +84,26 @@
 ========================= */
 
 .iconWrap {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 15%, transparent),
+    color-mix(in srgb, var(--secondary) 15%, transparent)
+  );
+
   flex-shrink: 0;
 }
 
 .icon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   color: var(--primary);
 }
 
@@ -109,7 +119,7 @@
 
 .featureTitle {
   font-family: var(--font-family-heading);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--foreground);
   margin: 0;
@@ -117,7 +127,7 @@
 
 .featureDescription {
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--muted-foreground);
   margin: 0;
 }
@@ -128,11 +138,11 @@
 
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .title {
-    font-size: 2.4rem;
+  .header {
+    margin-bottom: var(--spacing-14);
   }
 }
 
@@ -142,15 +152,30 @@
 
 @media (max-width: 640px) {
   .section {
-    padding: var(--spacing-12) 0;
+    padding: var(--spacing-14) 0;
   }
 
   .container {
     padding: 0 var(--spacing-4);
   }
 
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-6);
+  }
+
   .featureCard {
-    padding: var(--spacing-5);
+    padding: var(--spacing-6);
+  }
+
+  .iconWrap {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
   }
 
   .title {
