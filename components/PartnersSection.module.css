@@ -159,12 +159,10 @@
   margin-top: var(--spacing-20);
   border-radius: var(--radius-xl);
  background: linear-gradient(
-  135deg,
-  #e6f7ff 0%,   /* very light cyan */
-  #d9f2ff 30%,  /* soft sky blue */
-  #ccecff 60%,  /* light cyan-blue */
-  #f2fbff 100%  /* near-white blue */
-);
+    90deg,
+    var(--primary),
+    color-mix(in srgb, var(--primary) 70%, var(--secondary))
+  );
   border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
