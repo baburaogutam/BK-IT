@@ -152,18 +152,37 @@
 }
 
 /* =========================
-   Hire From BKIT – Lite Cyan CTA
+   Hire From BKIT CTA
 ========================= */
 
 .hireCTA {
   margin-top: var(--spacing-20);
   border-radius: var(--radius-xl);
- background: linear-gradient(
+
+  background: linear-gradient(
     90deg,
     var(--primary),
     color-mix(in srgb, var(--primary) 70%, var(--secondary))
   );
+
   border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
+  box-shadow: 0 24px 48px rgba(14, 165, 233, 0.25);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle highlight overlay */
+.hireCTA::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 .hireInner {
@@ -171,23 +190,28 @@
   margin: 0 auto;
   padding: var(--spacing-16) var(--spacing-10);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
+/* Title */
 .hireTitle {
   font-family: var(--font-family-heading);
-  font-size: 2.1rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--foreground);
+  color: #ffffff;
   margin-bottom: var(--spacing-4);
 }
 
+/* Description */
 .hireDescription {
   font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--muted-foreground);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: var(--spacing-8);
 }
 
+/* Actions */
 .hireActions {
   display: flex;
   gap: var(--spacing-4);
@@ -197,30 +221,27 @@
 
 /* Primary Button */
 .primaryBtn {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    color-mix(in srgb, var(--primary) 70%, var(--secondary))
-  );
-  color: #ffffff;
-  padding: 0.85rem 1.9rem;
+  background: #ffffff;
+  color: var(--primary);
+  padding: 0.9rem 2rem;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.35);
+
+  box-shadow: 0 14px 32px rgba(255, 255, 255, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .primaryBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(14, 165, 233, 0.45);
+  box-shadow: 0 18px 40px rgba(255, 255, 255, 0.45);
 }
 
 /* Secondary Button */
 .secondaryBtn {
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  padding: 0.85rem 1.9rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  color: #ffffff;
+  padding: 0.9rem 2rem;
   border-radius: 999px;
   font-weight: 500;
   text-decoration: none;
@@ -229,7 +250,22 @@
 }
 
 .secondaryBtn:hover {
-  background: color-mix(in srgb, var(--primary) 8%, transparent);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hireInner {
+    padding: var(--spacing-12) var(--spacing-6);
+  }
+
+  .hireTitle {
+    font-size: 1.9rem;
+  }
+
+  .hireDescription {
+    font-size: 0.95rem;
+  }
 }
 
 /* =========================
