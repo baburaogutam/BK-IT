@@ -1,32 +1,35 @@
+/* =========================
+   Services Section
+========================= */
+
 .servicesSection {
   width: 100%;
   padding: var(--spacing-16) 0;
-  overflow-x: hidden;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-12);
-  width: 100%;
 }
+
+/* =========================
+   Header
+========================= */
 
 .header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 720px;
+  margin: 0 auto var(--spacing-14);
 }
 
 .title {
   font-family: var(--font-family-heading);
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--foreground);
-  margin-bottom: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
 }
 
 .subtitle {
@@ -35,78 +38,80 @@
   line-height: 1.6;
 }
 
-.grid {
+/* =========================
+   Grid Layout
+========================= */
+
+.servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-6);
-  width: 100%;
 }
 
-.card {
-  background-color: var(--surface);
-  padding: var(--spacing-8);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+/* =========================
+   Service Card
+========================= */
+
+.serviceCard {
+  background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  text-align: left;
+
   display: flex;
   flex-direction: column;
   gap: var(--spacing-4);
-  position: relative;
-  overflow: hidden;
+
   transition:
     transform var(--animation-duration-normal) ease,
-    box-shadow var(--animation-duration-normal) ease,
-    border-color var(--animation-duration-normal) ease;
+    border-color var(--animation-duration-normal) ease,
+    box-shadow var(--animation-duration-normal) ease;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
+.serviceCard::before {
+  content: "";
+  height: 4px;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    color-mix(in srgb, var(--primary) 8%, transparent), 
-    transparent);
-  transition: left var(--animation-duration-slow) ease;
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin: -var(--spacing-8) -var(--spacing-8) var(--spacing-6);
 }
 
-.card:hover::before {
-  left: 100%;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
+.serviceCard:hover {
+  transform: translateY(-6px);
   border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+  box-shadow: var(--shadow-lg);
 }
+
+/* =========================
+   Icon
+========================= */
 
 .iconWrapper {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, 
-    color-mix(in srgb, var(--primary) 15%, transparent), 
-    color-mix(in srgb, var(--secondary) 15%, transparent));
-  border: 2px solid color-mix(in srgb, var(--primary) 20%, transparent);
-  transition: all var(--animation-duration-normal) ease;
-}
-
-.card:hover .iconWrapper {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, 
-    color-mix(in srgb, var(--primary) 25%, transparent), 
-    color-mix(in srgb, var(--secondary) 25%, transparent));
 }
 
 .icon {
+  width: 26px;
+  height: 26px;
   color: var(--primary);
 }
+
+/* =========================
+   Text
+========================= */
 
 .cardTitle {
   font-family: var(--font-family-heading);
@@ -117,112 +122,49 @@
 }
 
 .cardDescription {
-  font-size: 0.9375rem;
-  color: var(--muted-foreground);
+  font-size: 0.95rem;
   line-height: 1.6;
+  color: var(--muted-foreground);
   margin: 0;
 }
 
-/* Responsive adjustments */
+/* =========================
+   Tablet
+========================= */
+
 @media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 640px) {
   .servicesSection {
     padding: var(--spacing-12) 0;
   }
-  
-  .container {
-    padding: 0 var(--spacing-6);
-  }
-  
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: var(--spacing-6);
-  }
-}
 
-@media (max-width: 768px) {
-  .servicesSection {
-    padding: var(--spacing-10) 0;
-  }
-  
-  .container {
-    padding: 0 var(--spacing-4);
-    gap: var(--spacing-8);
-  }
-  
-  .title {
-    font-size: 2.25rem;
-    line-height: 1.2;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
-  
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  .servicesGrid {
+    grid-template-columns: 1fr;
     gap: var(--spacing-5);
   }
-  
-  .card {
-    padding: var(--spacing-6);
-    max-width: 100%;
-  }
-  
-  .iconWrapper {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .icon {
-    width: 22px;
-    height: 22px;
-  }
-  
-  .cardTitle {
-    font-size: 1.125rem;
-  }
-  
-  .cardDescription {
-    font-size: 0.875rem;
-  }
-}
 
-@media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-4);
-  }
-}
-
-@media (max-width: 480px) {
-  .servicesSection {
-    padding: var(--spacing-8) 0;
-  }
-  
-  .container {
-    padding: 0 var(--spacing-3);
-    gap: var(--spacing-6);
-  }
-  
   .title {
     font-size: 2rem;
   }
-  
-  .card {
-    padding: var(--spacing-5);
+
+  .serviceCard {
+    padding: var(--spacing-6);
   }
-  
-  .iconWrapper {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .cardTitle {
-    font-size: 1rem;
+
+  .serviceCard::before {
+    margin: -var(--spacing-6) -var(--spacing-6) var(--spacing-5);
   }
 }
