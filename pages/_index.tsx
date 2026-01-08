@@ -24,7 +24,7 @@ export default function IndexPage() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   {/* Favicon */}
-  <link rel="icon" type="image/png" href="/bkitLogo.png" />
+  <link rel="icon" type="image/png" href="./bkitLogo.png" />
 </Helmet>
       <div className={styles.pageContainer}>
         <HeroSection />
