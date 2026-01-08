@@ -133,6 +133,94 @@
   text-decoration: none;
 }
 
+/* =========================
+   Hire From BKIT CTA
+========================= */
+
+.hireCTA {
+  margin-top: var(--spacing-20);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    #0ea5e9 0%,
+    #0891b2 50%,
+    #10b981 100%
+  );
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.hireInner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--spacing-14) var(--spacing-10);
+  text-align: center;
+  color: #ffffff;
+}
+
+.hireTitle {
+  font-family: var(--font-family-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-4);
+}
+
+.hireDescription {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: var(--spacing-8);
+}
+
+.hireActions {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Primary Button */
+.primaryBtn {
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+}
+
+/* Secondary Button */
+.secondaryBtn {
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  color: #ffffff;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hireInner {
+    padding: var(--spacing-10) var(--spacing-6);
+  }
+
+  .hireTitle {
+    font-size: 1.8rem;
+  }
+}
+
+
 /* Mobile */
 @media (max-width: 768px) {
   .title {
