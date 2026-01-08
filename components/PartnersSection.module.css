@@ -1,9 +1,16 @@
+/* =========================
+   Partners Section – Base
+========================= */
+
 .partnersSection {
+  width: 100%;
   background: linear-gradient(
     180deg,
-    var(--background),
-    color-mix(in srgb, var(--primary) 4%, var(--background))
+    var(--background) 0%,
+    color-mix(in srgb, var(--primary) 4%, var(--background)) 100%
   );
+  position: relative;
+  overflow: hidden;
 }
 
 .container {
@@ -12,29 +19,46 @@
   padding: var(--spacing-18) var(--spacing-6);
 }
 
+/* =========================
+   Header
+========================= */
+
 .header {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto var(--spacing-16);
+  max-width: 760px;
+  margin: 0 auto var(--spacing-18);
 }
 
 .title {
+  font-family: var(--font-family-heading);
   font-size: 3rem;
   font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-4);
 }
 
 .subtitle {
-  color: var(--muted-foreground);
   font-size: 1.1rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
 }
+
+/* =========================
+   Section Titles
+========================= */
 
 .sectionTitle {
   text-align: center;
+  font-family: var(--font-family-heading);
   font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--foreground);
   margin: var(--spacing-16) 0 var(--spacing-8);
 }
 
-/* ===== Carousel ===== */
+/* =========================
+   Unified Carousel (Hiring + Tech)
+========================= */
 
 .carouselWrapper {
   overflow: hidden;
@@ -44,7 +68,8 @@
 .carouselTrack {
   display: flex;
   gap: var(--spacing-10);
-  animation: scroll 35s linear infinite;
+  width: max-content;
+  animation: scroll 40s linear infinite;
 }
 
 .carouselItem {
@@ -52,20 +77,30 @@
   height: 90px;
   background: var(--surface);
   border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .carouselItem img {
   max-height: 40px;
+  max-width: 120px;
+  object-fit: contain;
   filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  opacity: 0.85;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.carouselItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .carouselItem:hover img {
   filter: grayscale(0%);
+  opacity: 1;
 }
 
 @keyframes scroll {
@@ -77,12 +112,15 @@
   }
 }
 
-/* ===== Academic Grid ===== */
+/* =========================
+   Academic Partners (Stable Grid)
+========================= */
 
 .academicGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-8);
+  margin-top: var(--spacing-10);
 }
 
 .academicCard {
@@ -91,50 +129,30 @@
   padding: var(--spacing-8);
   text-align: center;
   border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.academicCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
 }
 
 .academicCard img {
   max-height: 70px;
   margin-bottom: var(--spacing-4);
+  object-fit: contain;
 }
 
 .academicCard h4 {
-  margin-bottom: var(--spacing-3);
-}
-
-/* ===== Hire CTA ===== */
-
-.hireCTA {
-  margin-top: var(--spacing-20);
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
-  border-radius: var(--radius-xl);
-  color: white;
-  padding: var(--spacing-14);
-}
-
-.hireContent {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hireButton {
-  display: inline-block;
-  margin-top: var(--spacing-6);
-  padding: var(--spacing-3) var(--spacing-6);
-  background: white;
-  color: var(--primary);
-  border-radius: var(--radius);
+  font-family: var(--font-family-heading);
+  font-size: 1.05rem;
   font-weight: 600;
-  text-decoration: none;
+  margin-bottom: var(--spacing-3);
+  color: var(--foreground);
 }
 
 /* =========================
-   Hire From BKIT CTA
+   Hire From BKIT – Lite Cyan CTA
 ========================= */
 
 .hireCTA {
@@ -142,32 +160,33 @@
   border-radius: var(--radius-xl);
   background: linear-gradient(
     135deg,
-    #0ea5e9 0%,
-    #0891b2 50%,
-    #10b981 100%
+    #e0f7ff 0%,
+    #d6f5fb 30%,
+    #c8f1f0 60%,
+    #eafdf9 100%
   );
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, transparent);
 }
 
 .hireInner {
-  max-width: 720px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: var(--spacing-14) var(--spacing-10);
+  padding: var(--spacing-16) var(--spacing-10);
   text-align: center;
-  color: #ffffff;
 }
 
 .hireTitle {
   font-family: var(--font-family-heading);
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 700;
+  color: var(--foreground);
   margin-bottom: var(--spacing-4);
 }
 
 .hireDescription {
   font-size: 1.05rem;
   line-height: 1.6;
-  opacity: 0.95;
+  color: var(--muted-foreground);
   margin-bottom: var(--spacing-8);
 }
 
@@ -180,54 +199,62 @@
 
 /* Primary Button */
 .primaryBtn {
-  background: #ffffff;
-  color: #0f172a;
-  padding: 0.85rem 1.8rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    color-mix(in srgb, var(--primary) 70%, var(--secondary))
+  );
+  color: #ffffff;
+  padding: 0.85rem 1.9rem;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
+  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .primaryBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 32px rgba(14, 165, 233, 0.45);
 }
 
 /* Secondary Button */
 .secondaryBtn {
-  border: 1.5px solid rgba(255, 255, 255, 0.85);
-  color: #ffffff;
-  padding: 0.85rem 1.8rem;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  padding: 0.85rem 1.9rem;
   border-radius: 999px;
   font-weight: 500;
   text-decoration: none;
+  background: transparent;
   transition: background 0.2s ease;
 }
 
 .secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: color-mix(in srgb, var(--primary) 8%, transparent);
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .hireInner {
-    padding: var(--spacing-10) var(--spacing-6);
-  }
+/* =========================
+   Responsive
+========================= */
 
-  .hireTitle {
-    font-size: 1.8rem;
-  }
-}
-
-
-/* Mobile */
 @media (max-width: 768px) {
   .title {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 
   .carouselItem {
     min-width: 140px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hireInner {
+    padding: var(--spacing-12) var(--spacing-6);
+  }
+
+  .hireTitle {
+    font-size: 1.8rem;
   }
 }
