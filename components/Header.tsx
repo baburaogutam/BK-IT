@@ -41,25 +41,14 @@ export const Header = () => {
         </nav>
 
         {/* Desktop Actions */}
-        <div className={styles.headerCtas}>
-  <Button
-    variant="ghost"
-    size="sm"
-    className={styles.headerButton}
-    asChild
-  >
-    <Link to="/login">Login</Link>
-  </Button>
-
-  <Button
-    size="sm"
-    className={styles.headerButton}
-    asChild
-  >
-    <Link to="/#contact">Contact Us</Link>
-  </Button>
-</div>
-
+        <div className={styles.actions}>
+          <Button variant="ghost" size="sm" asChild>
+            <Link to="/login">Login</Link>
+          </Button>
+          <Button size="sm" asChild>
+            <Link to="/#contact">Contact Us</Link>
+          </Button>
+        </div>
 
         {/* Mobile Hamburger */}
         <button
@@ -80,7 +69,7 @@ export const Header = () => {
                 <Link to="/#solutions" onClick={closeMobileMenu}>Solutions</Link>
                 <Link to="/#partners" onClick={closeMobileMenu}>Partners</Link>
                 <Link to="/#about" onClick={closeMobileMenu}>About</Link>
-                <Link to="#" onClick={closeMobileMenu}>Careers</Link>
+                <Link to="/careers" onClick={closeMobileMenu}>Careers</Link>
               </nav>
 
               <div className={styles.mobileActions}>
