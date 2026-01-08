@@ -7,13 +7,20 @@ import { ArrowRight } from "lucide-react";
 export const HeroSection = () => {
   return (
     <section className={styles.hero}>
+      {/* Background image */}
+      <div className={styles.background} />
+
+      {/* Overlay */}
+      <div className={styles.overlay} />
+
+      {/* Content */}
       <div className={styles.container}>
-        {/* Content */}
         <div className={styles.content}>
           <span className={styles.eyebrow}>College & Industry Enablement</span>
 
           <h1 className={styles.headline}>
-            Building <span>Industry-Ready Talent</span> <br />
+            Building <span>Industry-Ready Talent</span>
+            <br />
             for India’s Future
           </h1>
 
@@ -29,18 +36,10 @@ export const HeroSection = () => {
                 Partner With Us <ArrowRight size={18} />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button size="lg" variant="outline" asChild>
               <Link to="/#programs">Explore Programs</Link>
             </Button>
           </div>
-        </div>
-
-        {/* Visual */}
-        <div className={styles.visual}>
-          <img
-            src="https://images.unsplash.com/photo-1581091870627-3f98e9d0b21c?auto=format&fit=crop&w=1600&q=80"
-            alt="Students collaborating with mentors in a professional learning environment"
-          />
         </div>
       </div>
     </section>
