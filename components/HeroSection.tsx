@@ -8,56 +8,39 @@ export const HeroSection = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
+        {/* Content */}
         <div className={styles.content}>
-          <h1 className={styles.headline}>
-            <span className={styles.gradientText}>Building the Future Generation</span>
-            <br />
-            of India's Tech Leaders
-          </h1>
-          {/* <h1 className={styles.headline}>
-            <span className={styles.gradientText}>We Train. We Place. We Build.<br/> Your Success Starts Here.
+          <span className={styles.eyebrow}>College & Industry Enablement</span>
 
-            </span>
-          </h1> */}
-           <p className={styles.subheadline}>
-            BKIT Solutions is a dynamic organization dedicated to empowering
-            students and institutions through innovative IT training and
-            solutions.
+          <h1 className={styles.headline}>
+            Building <span>Industry-Ready Talent</span> <br />
+            for India’s Future
+          </h1>
+
+          <p className={styles.subheadline}>
+            BKIT Solutions partners with colleges to transform students into
+            skilled professionals through outcome-driven training, real-world
+            exposure, and placement-focused programs.
           </p>
-          {/* <p className={styles.subheadline}>
-            BKIT Solutions transforms potential into performance—delivering future-ready IT talent, innovative solutions, and lasting impact for students and institutions alike.
-          </p> */}
+
           <div className={styles.actions}>
-            <Button asChild size="lg">
+            <Button size="lg" asChild>
               <Link to="/#contact">
-                Get in Touch <ArrowRight size={20} />
+                Partner With Us <ArrowRight size={18} />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link to="/#services">Explore Services</Link>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/#programs">Explore Programs</Link>
             </Button>
           </div>
         </div>
-        <div className={styles.imageWrapper}>
-          <div className={styles.imageContainer}>
-            <img
-               //src="./pages/bkitMainImage3.png"
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
-              alt="A team of young Indian professionals collaborating in a modern office."
-              className={styles.heroImage}
-            />
-            <div className={styles.imageOverlay}></div>
-          </div>
-          {/* <div className={styles.floatingStats}>
-            <div className={styles.statBubble}>
-              <span className={styles.statNumber}>15K+</span>
-              <span className={styles.statLabel}>Students</span>
-            </div>
-            <div className={styles.statBubble}>
-              <span className={styles.statNumber}>95%</span>
-              <span className={styles.statLabel}>Success Rate</span>
-            </div>
-          </div> */}
+
+        {/* Visual */}
+        <div className={styles.visual}>
+          <img
+            src="https://images.unsplash.com/photo-1581091870627-3f98e9d0b21c?auto=format&fit=crop&w=1600&q=80"
+            alt="Students collaborating with mentors in a professional learning environment"
+          />
         </div>
       </div>
     </section>
