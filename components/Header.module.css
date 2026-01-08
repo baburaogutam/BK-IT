@@ -10,6 +10,25 @@
   align-items: center;
 }
 
+.headerCtas {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+/* Shared CTA feel with Hero buttons */
+.headerButton {
+  padding: 0.45rem 1.1rem; /* key change */
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Slightly softer ghost button */
+.headerButton[data-variant="ghost"] {
+  padding: 0.45rem 0.9rem;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -114,6 +133,12 @@
   z-index: var(--z-nav-sticky);
   animation: slideDown 0.25s ease-out;
 }
+
+.mobileActions .headerButton {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+}
+
 
 @keyframes slideDown {
   from {
