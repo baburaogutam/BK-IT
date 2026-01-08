@@ -21,8 +21,7 @@ export const Footer = () => {
               <span className={styles.logoText}>BKIT Solutions</span>
             </Link>
             <p className={styles.description}>
-              Empowering students and institutions through innovative training
-              programs and IT solutions.
+              Empowering students and institutions with industry-ready training programs and scalable IT solutions.
             </p>
           </div>
           <div className={styles.linksGrid}>
@@ -32,17 +31,17 @@ export const Footer = () => {
                 Corporate Training
               </Link>
               <Link to="/#services" className={styles.link}>
-                Placement Support
+                Placement Assistance
               </Link>
               <Link to="/#services" className={styles.link}>
-                Industry Connects
+               Industry Partnerships
               </Link>
               <Link to="/#services" className={styles.link}>
-                IT Solutions
+               IT & Digital Solutions
               </Link>
             </div>
             <div className={styles.linkColumn}>
-              <h3 className={styles.columnTitle}>Contact Us</h3>
+              <h3 className={styles.columnTitle}>Get in Touch</h3>
               <a
                 href="mailto:bkitsolutions1000cr@gmail.com"
                 className={styles.link}
