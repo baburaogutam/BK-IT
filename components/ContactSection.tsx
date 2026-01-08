@@ -78,7 +78,7 @@ export const ContactSection = () => {
               className={styles.contactItem}
             >
               <Mail size={20} />
-              <span>bkitsolutions1000cr@gmail.com</span>
+              <span>info@bkitsolutions.in</span>
             </a>
             <a href="tel:+918121034516" className={styles.contactItem}>
               <Phone size={20} />
