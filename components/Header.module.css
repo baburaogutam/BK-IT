@@ -1,12 +1,11 @@
 .header {
   position: sticky;
   top: 0;
-  width: 100%;
-  background-color: color-mix(in srgb, var(--background) 80%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
   z-index: var(--z-nav-sticky);
   height: 4.5rem;
+  background-color: color-mix(in srgb, var(--background) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
 }
@@ -19,9 +18,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -31,103 +30,77 @@
 }
 
 .logoIcon {
- width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   background-image: url("/pages/bkitLogo.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--background);
-  border-radius: var(--radius-md, 6px);
+  border-radius: var(--radius-md);
 }
 
 .logoText {
   font-family: var(--font-family-heading);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
-/* Desktop Navigation */
+/* Desktop Nav */
 .nav {
   display: flex;
   gap: var(--spacing-6);
 }
 
 .navLink {
-  font-size: 0.9375rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--muted-foreground);
   text-decoration: none;
-  transition: color var(--animation-duration-fast) ease;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .navLink:hover {
   color: var(--foreground);
 }
 
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.2s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Actions */
 .actions {
   display: flex;
-  gap: var(--spacing-2);
   align-items: center;
-}
-
-.loadingPlaceholder {
-  width: 100px;
-  height: 2rem;
-  background-color: var(--muted);
-  border-radius: var(--radius);
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-.userActions {
-  display: flex;
   gap: var(--spacing-3);
-  align-items: center;
 }
 
-.userName {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--foreground);
-}
-
-/* Mobile Hamburger Button */
+/* Hamburger */
 .hamburger {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--foreground);
-  transition: color var(--animation-duration-fast) ease;
 }
 
-.hamburger:hover {
-  color: var(--primary);
-}
-
-/* Mobile Menu Overlay */
+/* Mobile Overlay */
 .mobileOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
   z-index: calc(var(--z-nav-sticky) - 1);
-  animation: fadeIn var(--animation-duration-normal) ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 /* Mobile Menu */
@@ -139,18 +112,17 @@
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
   z-index: var(--z-nav-sticky);
-  animation: slideDown var(--animation-duration-normal) var(--ease-out);
-  backdrop-filter: blur(8px);
+  animation: slideDown 0.25s ease-out;
 }
 
 @keyframes slideDown {
-  from { 
+  from {
     opacity: 0;
-    transform: translateY(-1rem); 
+    transform: translateY(-8px);
   }
-  to { 
+  to {
     opacity: 1;
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
@@ -158,92 +130,45 @@
   display: flex;
   flex-direction: column;
   padding: var(--spacing-4) var(--spacing-6);
-  gap: var(--spacing-1);
+  gap: var(--spacing-2);
 }
 
-.mobileNavLink {
+.mobileNav a {
+  text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--muted-foreground);
-  text-decoration: none;
-  padding: var(--spacing-3) 0;
-  border-bottom: 1px solid var(--border-light);
-  transition: color var(--animation-duration-fast) ease;
-}
-
-.mobileNavLink:hover {
   color: var(--foreground);
+  padding: var(--spacing-2) 0;
+  border-bottom: 1px solid var(--border-light);
 }
 
-.mobileNavLink:last-child {
+.mobileNav a:last-child {
   border-bottom: none;
 }
 
 .mobileActions {
   padding: var(--spacing-4) var(--spacing-6);
-  border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
-  align-items: stretch;
 }
 
-.mobileUserActions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-3);
-  align-items: stretch;
-}
-
-.mobileUserActions .userName {
-  justify-content: center;
-  padding: var(--spacing-2) 0;
-}
-
-/* Responsive Breakpoints */
+/* Responsive */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 var(--spacing-4);
-  }
-  
-  /* Hide desktop navigation and actions on mobile */
-  .nav {
-    display: none;
-  }
-  
+  .nav,
   .actions {
     display: none;
   }
-  
-  /* Show hamburger button on mobile */
+
   .hamburger {
     display: block;
   }
-  
-  .logoText {
-    font-size: 1.125rem;
-  }
-}
 
-@media (max-width: 480px) {
   .container {
-    padding: 0 var(--spacing-3);
-  }
-  
-  .logoText {
-    font-size: 1rem;
-  }
-  
-  .mobileNav {
-    padding: var(--spacing-3) var(--spacing-4);
-  }
-  
-  .mobileActions {
-    padding: var(--spacing-3) var(--spacing-4);
+    padding: 0 var(--spacing-4);
   }
 }
 
-/* Ensure mobile menu doesn't show on desktop */
 @media (min-width: 769px) {
   .mobileMenu,
   .mobileOverlay {
