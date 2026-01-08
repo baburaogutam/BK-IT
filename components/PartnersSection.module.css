@@ -24,39 +24,31 @@
 }
 
 .subtitle {
-  font-size: 1.1rem;
   color: var(--muted-foreground);
-}
-
-/* ================= CAROUSEL ================= */
-
-.carouselSection {
-  margin-bottom: var(--spacing-16);
+  font-size: 1.1rem;
 }
 
 .sectionTitle {
   text-align: center;
-  font-size: 1.6rem;
-  margin-bottom: var(--spacing-6);
+  font-size: 1.75rem;
+  margin: var(--spacing-16) 0 var(--spacing-8);
 }
 
-.carousel {
+/* ===== Carousel ===== */
+
+.carouselWrapper {
   overflow: hidden;
   position: relative;
 }
 
-.track {
+.carouselTrack {
   display: flex;
   gap: var(--spacing-10);
-  animation: scroll 25s linear infinite;
+  animation: scroll 35s linear infinite;
 }
 
-.track.slow {
-  animation-duration: 35s;
-}
-
-.logoCard {
-  min-width: 160px;
+.carouselItem {
+  min-width: 180px;
   height: 90px;
   background: var(--surface);
   border-radius: var(--radius-lg);
@@ -66,14 +58,13 @@
   border: 1px solid var(--border);
 }
 
-.logoCard img {
-  max-width: 120px;
-  max-height: 50px;
+.carouselItem img {
+  max-height: 40px;
   filter: grayscale(100%);
   transition: filter 0.3s ease;
 }
 
-.logoCard:hover img {
+.carouselItem:hover img {
   filter: grayscale(0%);
 }
 
@@ -86,11 +77,7 @@
   }
 }
 
-/* ================= ACADEMIC ================= */
-
-.academicSection {
-  margin-top: var(--spacing-18);
-}
+/* ===== Academic Grid ===== */
 
 .academicGrid {
   display: grid;
@@ -100,45 +87,59 @@
 
 .academicCard {
   background: var(--surface);
-  padding: var(--spacing-8);
   border-radius: var(--radius-xl);
-  border: 1px solid var(--border);
+  padding: var(--spacing-8);
   text-align: center;
+  border: 1px solid var(--border);
 }
 
 .academicCard img {
-  max-width: 120px;
-  max-height: 60px;
+  max-height: 70px;
   margin-bottom: var(--spacing-4);
 }
 
 .academicCard h4 {
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
 }
 
-/* ================= CTA ================= */
+/* ===== Hire CTA ===== */
 
-.cta {
-  margin-top: var(--spacing-18);
-  padding: var(--spacing-14);
-  text-align: center;
+.hireCTA {
+  margin-top: var(--spacing-20);
   background: linear-gradient(
     135deg,
     var(--primary),
     var(--secondary)
   );
-  color: white;
   border-radius: var(--radius-xl);
+  color: white;
+  padding: var(--spacing-14);
 }
 
-.cta h3 {
-  font-size: 1.8rem;
-  margin-bottom: var(--spacing-3);
-}
-
-.cta p {
-  max-width: 560px;
+.hireContent {
+  max-width: 600px;
   margin: 0 auto;
-  opacity: 0.95;
+  text-align: center;
+}
+
+.hireButton {
+  display: inline-block;
+  margin-top: var(--spacing-6);
+  padding: var(--spacing-3) var(--spacing-6);
+  background: white;
+  color: var(--primary);
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .carouselItem {
+    min-width: 140px;
+  }
 }
