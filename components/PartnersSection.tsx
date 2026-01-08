@@ -39,7 +39,7 @@ export const PartnersSection = () => {
         </header>
 
         {/* Unified Carousel */}
-        <h3 className={styles.sectionTitle}>🤝 Hiring & Technology Partners</h3>
+        <h3 className={styles.sectionTitle}>Hiring & Technology Partners</h3>
 
         <div className={styles.carouselWrapper}>
           <div className={styles.carouselTrack}>
@@ -52,7 +52,7 @@ export const PartnersSection = () => {
         </div>
 
         {/* Academic Partners */}
-        <h3 className={styles.sectionTitle}>🎓 Academic Partners</h3>
+        <h3 className={styles.sectionTitle}>Academic Partners</h3>
 
         <div className={styles.academicGrid}>
           {academicPartners.map(partner => (
