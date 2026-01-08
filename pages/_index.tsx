@@ -14,7 +14,7 @@ export default function IndexPage() {
   return (
     <>
       <Helmet>
-  <title>BKIT Solutions</title>
+  <title>BKIT</title>
 
   <meta
     name="description"
