@@ -68,7 +68,7 @@ export const Footer = () => {
         </div>
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            © {year} BKIT Solutions. All rights reserved.
+            © 2024 BKIT Solutions. All rights reserved.
           </p>
         </div>
       </div>
