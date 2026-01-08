@@ -69,7 +69,7 @@ export const Header = () => {
                 <Link to="/#solutions" onClick={closeMobileMenu}>Solutions</Link>
                 <Link to="/#partners" onClick={closeMobileMenu}>Partners</Link>
                 <Link to="/#about" onClick={closeMobileMenu}>About</Link>
-                <Link to="/careers" onClick={closeMobileMenu}>Careers</Link>
+                <Link to="#" onClick={closeMobileMenu}>Careers</Link>
               </nav>
 
               <div className={styles.mobileActions}>
