@@ -48,7 +48,7 @@ export const Footer = () => {
                 className={styles.link}
               >
                 <Mail size={16} />
-                <span>bkitsolutions1000cr@gmail.com</span>
+                <span>info@bkitsolutions.in</span>
               </a>
               <a href="tel:+918121034516" className={styles.link}>
                 <Phone size={16} />
