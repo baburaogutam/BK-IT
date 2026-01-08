@@ -48,7 +48,7 @@ const features = [
   },
 ];
 
-export const WhatWeOfferSection = () => {
+export const DetailedServicesSection = () => {
   return (
     <section id="details" className={styles.section}>
       <div className={styles.container}>
