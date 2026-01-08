@@ -41,14 +41,25 @@ export const Header = () => {
         </nav>
 
         {/* Desktop Actions */}
-        <div className={styles.actions}>
-          <Button variant="ghost" size="sm" asChild>
-            <Link to="/login">Login</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link to="/#contact">Contact Us</Link>
-          </Button>
-        </div>
+        <div className={styles.headerCtas}>
+  <Button
+    variant="ghost"
+    size="sm"
+    className={styles.headerButton}
+    asChild
+  >
+    <Link to="/login">Login</Link>
+  </Button>
+
+  <Button
+    size="sm"
+    className={styles.headerButton}
+    asChild
+  >
+    <Link to="/#contact">Contact Us</Link>
+  </Button>
+</div>
+
 
         {/* Mobile Hamburger */}
         <button
