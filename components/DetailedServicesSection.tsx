@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./WhatWeOfferSection.module.css";
+import styles from "./DetailedServicesSection.module.css";
 import {
   Target,
   Users,
