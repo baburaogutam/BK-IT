@@ -1,22 +1,42 @@
+/* =========================
+   Stats Trust Band
+========================= */
+
 .statsBand {
   width: 100%;
+  max-width: 1200px;
+  margin: var(--spacing-12) auto;
+
   background: linear-gradient(
     90deg,
     var(--primary),
     color-mix(in srgb, var(--primary) 70%, var(--secondary))
   );
+
   padding: var(--spacing-10) 0;
+
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+  overflow: hidden;
 }
 
+/* Inner container */
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 var(--spacing-6);
+  padding: 0 var(--spacing-10);
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-6);
   align-items: center;
 }
+
+/* =========================
+   Individual Stat Item
+========================= */
 
 .statItem {
   text-align: center;
@@ -36,19 +56,31 @@
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .label {
-  font-size: 0.95rem;
-  opacity: 0.9;
+  display: block;
   margin-top: var(--spacing-1);
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
-/* Tablet */
+/* =========================
+   Tablet View
+========================= */
+
 @media (max-width: 768px) {
+  .statsBand {
+    margin: var(--spacing-10) var(--spacing-4);
+    border-radius: var(--radius-lg);
+  }
+
   .container {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-8);
+    padding: 0 var(--spacing-8);
   }
 
   .value {
@@ -56,14 +88,33 @@
   }
 }
 
-/* Mobile */
+/* =========================
+   Mobile View
+========================= */
+
 @media (max-width: 480px) {
+  .statsBand {
+    margin: var(--spacing-8) var(--spacing-3);
+    padding: var(--spacing-8) 0;
+    border-radius: var(--radius-md);
+  }
+
   .container {
     grid-template-columns: 1fr;
     gap: var(--spacing-6);
+    padding: 0 var(--spacing-6);
   }
 
-  .statsBand {
-    padding: var(--spacing-8) 0;
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .value {
+    font-size: 1.9rem;
+  }
+
+  .label {
+    font-size: 0.9rem;
   }
 }
