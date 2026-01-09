@@ -151,10 +151,10 @@ export const PartnersSection = () => {
             </p>
 
             <div className={styles.hireActions}>
-              <a href="/contact" className={styles.primaryBtn}>
+              <a href="#" className={styles.primaryBtn}>
                 Partner With Us →
               </a>
-              <a href="/programs" className={styles.secondaryBtn}>
+              <a href="#" className={styles.secondaryBtn}>
                 Explore Talent
               </a>
             </div>
