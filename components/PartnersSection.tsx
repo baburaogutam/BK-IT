@@ -66,7 +66,7 @@ const partners = [
     type: "academic",
   },
   {
-    name: "Malla Reddy Engineering College",
+    name: "Malla Reddy College Of Engineering and Technology ",
     logo: "https://yt3.googleusercontent.com/ytc/AIdro_m8Isn1GCImnRDRm8tTaIpuO8UKLgRIXQo1UEJ-bNMmHzM=s160-c-k-c0x00ffffff-no-rj",
     type: "academic",
   },
