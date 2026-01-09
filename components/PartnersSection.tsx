@@ -67,7 +67,7 @@ const partners = [
   },
   {
     name: "Malla Reddy Engineering College",
-    logo: "https://upload.wikimedia.org/wikipedia/en/3/3f/Malla_Reddy_Engineering_College_logo.png",
+    logo: "https://yt3.googleusercontent.com/ytc/AIdro_m8Isn1GCImnRDRm8tTaIpuO8UKLgRIXQo1UEJ-bNMmHzM=s160-c-k-c0x00ffffff-no-rj",
     type: "academic",
   },
   {
