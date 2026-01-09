@@ -10,7 +10,7 @@ const testimonials = [
     company: "Google",
     type: "student",
     content:
-      "BKIT Solutions transformed my career trajectory. Their structured training and placement support helped me confidently land my first role.",
+      "BKIT played a huge role in shaping my early career. The training was practical, focused, and gave me the confidence to crack my first role.",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
     company: "Vemu Engineering College",
     type: "college",
     content:
-      "BKIT Solutions has significantly improved our students’ industry readiness with measurable placement success.",
+      "Our students became noticeably more industry-ready. The programs delivered consistent outcomes and real placement improvements.",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const testimonials = [
     company: "PRM360",
     type: "corporate",
     content:
-      "Well-structured and impactful corporate training programs that delivered real productivity gains.",
+      "The training was structured, relevant, and easy to apply. We saw clear improvements in confidence and on-the-job performance.",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const testimonials = [
     company: "Value Momentum",
     type: "student",
     content:
-      "The real-world projects and interview preparation gave me confidence and clarity during placements.",
+      "The hands-on projects and interview prep changed how I approached placements. I felt prepared and confident walking into interviews.",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const testimonials = [
     company: "RGM College",
     type: "college",
     content:
-      "Industry connect programs and hackathons created genuine exposure and opportunities for students.",
+      "Industry connects and hackathons gave our students real exposure. The impact was visible in their skills and mindset.",
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const testimonials = [
     company: "HCL Technologies",
     type: "corporate",
     content:
-      "A reliable long-term partner balancing theory with strong practical application.",
+      "BKIT strikes the right balance between fundamentals and real-world application. A dependable long-term training partner.",
   },
 ];
 
@@ -72,21 +72,16 @@ export const TestimonialsSection = () => {
         <header className={styles.header}>
           <h2>Trusted by Students, Colleges & Corporates</h2>
           <p>
-            Honest experiences from learners, institutions, and industry partners
-            who achieved measurable outcomes with BKIT Solutions.
+            Honest feedback from learners, institutions, and industry partners
+            who experienced real outcomes with BKIT Solutions.
           </p>
         </header>
 
         <div className={styles.grid}>
           {testimonials.map((t) => (
             <article key={t.id} className={styles.card}>
-              <span className={`${styles.tag} ${styles[t.type]}`}>
-                {getTypeLabel(t.type)}
-              </span>
-
-              <p className={styles.content}>"{t.content}"</p>
-
-              <div className={styles.footer}>
+              {/* Name Block */}
+              <div className={styles.nameBlock}>
                 <Avatar>
                   <AvatarFallback>
                     {t.name
@@ -103,6 +98,16 @@ export const TestimonialsSection = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Badge */}
+              <span className={`${styles.tag} ${styles[t.type]}`}>
+                {getTypeLabel(t.type)}
+              </span>
+
+              {/* Review */}
+              <p className={styles.content}>
+                “{t.content}”
+              </p>
             </article>
           ))}
         </div>
