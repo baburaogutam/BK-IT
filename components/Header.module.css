@@ -1,26 +1,41 @@
+/* =========================
+   Sticky Header
+========================= */
+
 .header {
   position: sticky;
   top: 0;
   z-index: var(--z-nav-sticky);
   height: 4.5rem;
-  background-color: color-mix(in srgb, var(--background) 85%, transparent);
+
+  background-color: color-mix(in srgb, var(--background) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+
   display: flex;
   align-items: center;
 }
+
+/* =========================
+   Container
+========================= */
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+
   padding: 0 var(--spacing-8);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
+/* =========================
+   Logo
+========================= */
+
 .logo {
   display: flex;
   align-items: center;
@@ -45,7 +60,10 @@
   font-size: 1.2rem;
 }
 
-/* Desktop Nav */
+/* =========================
+   Desktop Nav
+========================= */
+
 .nav {
   display: flex;
   gap: var(--spacing-6);
@@ -79,14 +97,20 @@
   width: 100%;
 }
 
-/* Actions */
+/* =========================
+   Actions (Desktop)
+========================= */
+
 .actions {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
 }
 
-/* Hamburger */
+/* =========================
+   Hamburger
+========================= */
+
 .hamburger {
   display: none;
   background: none;
@@ -95,7 +119,10 @@
   color: var(--foreground);
 }
 
-/* Mobile Overlay */
+/* =========================
+   Mobile Overlay
+========================= */
+
 .mobileOverlay {
   position: fixed;
   inset: 0;
@@ -103,14 +130,19 @@
   z-index: calc(var(--z-nav-sticky) - 1);
 }
 
-/* Mobile Menu */
+/* =========================
+   Mobile Menu
+========================= */
+
 .mobileMenu {
   position: fixed;
   top: 4.5rem;
   left: 0;
   right: 0;
+
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
+
   z-index: var(--z-nav-sticky);
   animation: slideDown 0.25s ease-out;
 }
@@ -126,6 +158,10 @@
   }
 }
 
+/* =========================
+   Mobile Nav Links
+========================= */
+
 .mobileNav {
   display: flex;
   flex-direction: column;
@@ -138,6 +174,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: var(--foreground);
+
   padding: var(--spacing-2) 0;
   border-bottom: 1px solid var(--border-light);
 }
@@ -146,6 +183,10 @@
   border-bottom: none;
 }
 
+/* =========================
+   Mobile Actions (Buttons)
+========================= */
+
 .mobileActions {
   padding: var(--spacing-4) var(--spacing-6);
   display: flex;
@@ -153,7 +194,10 @@
   gap: var(--spacing-3);
 }
 
-/* Responsive */
+/* =========================
+   Responsive
+========================= */
+
 @media (max-width: 768px) {
   .nav,
   .actions {
