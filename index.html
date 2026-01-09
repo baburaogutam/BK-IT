@@ -8,11 +8,40 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/bkitLogo.png" />
+    <style>
+       .whatsapp-float {
+        position: fixed;
+        bottom: 80px;
+        left: 20px;
+        z-index: 9999;
+        background-color: transparent;
+    }
+    .whatsapp-float img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .whatsapp-float {
+        position: fixed;
+        bottom: 80px;
+        left: 20px;
+        z-index: 9999;
+        animation: bounce 2.5s infinite;
+    }
+    </style>
   </head>
 
   <body>
     <!--Made with Floot-->
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
+    <!-- WhatsApp Floating Button -->
+    <a 
+    href="https://wa.me/8121034516" 
+    class="whatsapp-float" 
+    target="_blank" 
+    title="Chat with us on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat" />
+    </a>
   </body>
 </html>
