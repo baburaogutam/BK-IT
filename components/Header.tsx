@@ -38,7 +38,7 @@ export const Header = () => {
 
           {/* Increased padding on desktop */}
           <Button size="md" asChild>
-            <Link to="/#contact">Contact Us</Link>
+            <Link to="/#">Job Portal</Link>
           </Button>
         </div>
 
@@ -58,11 +58,11 @@ export const Header = () => {
 
             <div className={styles.mobileMenu}>
               <nav className={styles.mobileNav}>
-                <Link to="/#about" onClick={closeMobileMenu}>About</Link>
-                <Link to="/#solutions" onClick={closeMobileMenu}>Services</Link>
+                <Link to="/#about" onClick={closeMobileMenu}>About Us</Link>
+                <Link to="/#services" onClick={closeMobileMenu}>Services</Link>
                 <Link to="/#partners" onClick={closeMobileMenu}>Partners</Link>
                 <Link to="/#testimonials" onClick={closeMobileMenu}>Testimonials</Link>
-                <Link to="/careers" onClick={closeMobileMenu}>Careers</Link>
+                <Link to="/#contact" onClick={closeMobileMenu}>Contact</Link>
               </nav>
 
               {/* Bigger buttons on mobile */}
@@ -72,7 +72,7 @@ export const Header = () => {
                 </Button>
 
                 <Button size="lg" asChild>
-                  <Link to="/#contact" onClick={closeMobileMenu}>Contact Us</Link>
+                  <Link to="/#" onClick={closeMobileMenu}>Job Portal</Link>
                 </Button>
               </div>
             </div>
