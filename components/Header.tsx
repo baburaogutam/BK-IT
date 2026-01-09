@@ -38,7 +38,7 @@ export const Header = () => {
 
           {/* Increased padding on desktop */}
           <Button size="md" asChild>
-            <Link to="/login">Job Portal</Link>
+            <Link to="/jobs">Job Portal</Link>
           </Button>
         </div>
 
@@ -72,7 +72,7 @@ export const Header = () => {
                 </Button>
 
                 <Button size="lg" asChild>
-                  <Link to="/login" onClick={closeMobileMenu}>Job Portal</Link>
+                  <Link to="/jobs" onClick={closeMobileMenu}>Job Portal</Link>
                 </Button>
               </div>
             </div>
