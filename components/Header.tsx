@@ -72,7 +72,7 @@ export const Header = () => {
                 </Button>
 
                 <Button size="lg" asChild>
-                  <Link to="/#" onClick={closeMobileMenu}>Job Portal</Link>
+                  <Link to="/login" onClick={closeMobileMenu}>Job Portal</Link>
                 </Button>
               </div>
             </div>
