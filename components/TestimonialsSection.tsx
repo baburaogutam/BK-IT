@@ -69,7 +69,7 @@ const getBadge = (type: string) => {
 
 export const TestimonialsSection = () => {
   return (
-    <section className={styles.section}>
+    <section id="testimonials" className={styles.section}>
       <div className={styles.container}>
         <header className={styles.header}>
           <h2 className={styles.title}>Trusted by Students, Colleges & Corporates</h2>
