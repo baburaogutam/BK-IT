@@ -68,7 +68,7 @@ export const Header = () => {
               {/* Bigger buttons on mobile */}
               <div className={styles.mobileActions}>
                 <Button variant="outline" size="lg" asChild>
-                  <Link to="/login" onClick={closeMobileMenu}>Login</Link>
+                  <Link to="/#" onClick={closeMobileMenu}>LMS</Link>
                 </Button>
 
                 <Button size="lg" asChild>
