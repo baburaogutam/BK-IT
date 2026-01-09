@@ -24,26 +24,26 @@ export const Header = () => {
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
           <Link to="/#programs" className={styles.navLink}>
-            Programs
+            About Us
           </Link>
           <Link to="/#solutions" className={styles.navLink}>
-            Solutions
+            Services
           </Link>
           <Link to="/#partners" className={styles.navLink}>
             Partners
           </Link>
           <Link to="/#about" className={styles.navLink}>
-            About
+            Testimonials
           </Link>
-          <Link to="/careers" className={styles.navLink}>
-            Careers
+          <Link to="/#contact" className={styles.navLink}>
+            Contact Us
           </Link>
         </nav>
 
         {/* Desktop Actions */}
         <div className={styles.actions}>
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/login">Login</Link>
+            <Link to="#">Login</Link>
           </Button>
           <Button size="sm" asChild>
             <Link to="/#contact">Contact Us</Link>
