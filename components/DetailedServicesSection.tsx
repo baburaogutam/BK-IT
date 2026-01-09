@@ -50,7 +50,7 @@ const features = [
 
 export const DetailedServicesSection = () => {
   return (
-    <section id="details" className={styles.section}>
+    <section id="programs" className={styles.section}>
       <div className={styles.container}>
         <header className={styles.header}>
           <h2 className={styles.title}>What We Offer</h2>
