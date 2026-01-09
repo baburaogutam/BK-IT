@@ -23,29 +23,21 @@ export const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
-          <Link to="/#programs" className={styles.navLink}>
-            About Us
-          </Link>
-          <Link to="/#solutions" className={styles.navLink}>
-            Services
-          </Link>
-          <Link to="/#partners" className={styles.navLink}>
-            Partners
-          </Link>
-          <Link to="/#about" className={styles.navLink}>
-            Testimonials
-          </Link>
-          <Link to="/#contact" className={styles.navLink}>
-            Contact Us
-          </Link>
+          <Link to="/#about" className={styles.navLink}>About Us</Link>
+          <Link to="/#solutions" className={styles.navLink}>Services</Link>
+          <Link to="/#partners" className={styles.navLink}>Partners</Link>
+          <Link to="/#testimonials" className={styles.navLink}>Testimonials</Link>
+          <Link to="/#contact" className={styles.navLink}>Contact</Link>
         </nav>
 
         {/* Desktop Actions */}
         <div className={styles.actions}>
           <Button variant="ghost" size="sm" asChild>
-            <Link to="#">Login</Link>
+            <Link to="/login">Login</Link>
           </Button>
-          <Button size="sm" asChild>
+
+          {/* Increased padding on desktop */}
+          <Button size="md" asChild>
             <Link to="/#contact">Contact Us</Link>
           </Button>
         </div>
@@ -63,20 +55,23 @@ export const Header = () => {
         {isMobileMenuOpen && (
           <>
             <div className={styles.mobileOverlay} onClick={closeMobileMenu} />
+
             <div className={styles.mobileMenu}>
               <nav className={styles.mobileNav}>
-                <Link to="/#programs" onClick={closeMobileMenu}>Programs</Link>
-                <Link to="/#solutions" onClick={closeMobileMenu}>Solutions</Link>
-                <Link to="/#partners" onClick={closeMobileMenu}>Partners</Link>
                 <Link to="/#about" onClick={closeMobileMenu}>About</Link>
+                <Link to="/#solutions" onClick={closeMobileMenu}>Services</Link>
+                <Link to="/#partners" onClick={closeMobileMenu}>Partners</Link>
+                <Link to="/#testimonials" onClick={closeMobileMenu}>Testimonials</Link>
                 <Link to="/careers" onClick={closeMobileMenu}>Careers</Link>
               </nav>
 
+              {/* Bigger buttons on mobile */}
               <div className={styles.mobileActions}>
-                <Button variant="outline" size="sm" asChild>
+                <Button variant="outline" size="lg" asChild>
                   <Link to="/login" onClick={closeMobileMenu}>Login</Link>
                 </Button>
-                <Button size="sm" asChild>
+
+                <Button size="lg" asChild>
                   <Link to="/#contact" onClick={closeMobileMenu}>Contact Us</Link>
                 </Button>
               </div>
