@@ -33,7 +33,7 @@ export const Header = () => {
         {/* Desktop Actions */}
         <div className={styles.actions}>
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/login">Login</Link>
+            <Link to="/#">LMS</Link>
           </Button>
 
           {/* Increased padding on desktop */}
