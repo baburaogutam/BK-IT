@@ -1,11 +1,49 @@
 /* =========================
+   Stats Section Wrapper
+========================= */
+
+.statsSection {
+  width: 100%;
+  padding: var(--spacing-20) 0 var(--spacing-24);
+  background: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    color-mix(in srgb, var(--primary) 3%, var(--background)) 100%
+  );
+}
+
+/* =========================
+   Top Context
+========================= */
+
+.statsIntro {
+  max-width: 760px;
+  margin: 0 auto var(--spacing-12);
+  text-align: center;
+}
+
+.statsTitle {
+  font-family: var(--font-family-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: var(--spacing-4);
+}
+
+.statsSubtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+/* =========================
    Stats Trust Band
 ========================= */
 
 .statsBand {
   width: 100%;
   max-width: 1200px;
-  margin: var(--spacing-12) auto;
+  margin: 0 auto;
 
   background: linear-gradient(
     90deg,
@@ -16,8 +54,6 @@
   padding: var(--spacing-10) 0;
   border-radius: var(--radius-xl);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-
-  position: relative;
   overflow: hidden;
 }
 
@@ -28,7 +64,6 @@
 .container {
   max-width: 100%;
   margin: 0 auto;
-
   padding: 0 var(--spacing-10);
 
   display: grid;
@@ -71,13 +106,38 @@
 }
 
 /* =========================
-   Tablet View
+   Bottom Context
+========================= */
+
+.statsOutro {
+  max-width: 680px;
+  margin: var(--spacing-12) auto 0;
+  text-align: center;
+}
+
+.statsOutro p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted-foreground);
+}
+
+/* =========================
+   Tablet
 ========================= */
 
 @media (max-width: 768px) {
-  .statsBand {
-    margin: var(--spacing-10) auto;
-    border-radius: var(--radius-lg);
+  .statsTitle {
+    font-size: 2rem;
+  }
+
+  .statsIntro {
+    margin-bottom: var(--spacing-10);
+    padding: 0 var(--spacing-4);
+  }
+
+  .statsOutro {
+    margin-top: var(--spacing-10);
+    padding: 0 var(--spacing-4);
   }
 
   .container {
@@ -92,20 +152,19 @@
 }
 
 /* =========================
-   Mobile View (FIXED)
+   Mobile
 ========================= */
 
 @media (max-width: 480px) {
   .statsBand {
-    margin: var(--spacing-8) auto;   /* ✅ center only */
     padding: var(--spacing-8) 0;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
   }
 
   .container {
     grid-template-columns: 1fr;
     gap: var(--spacing-6);
-    padding: 0 var(--spacing-4);     /* ✅ reduced padding */
+    padding: 0 var(--spacing-4);
   }
 
   .icon {
