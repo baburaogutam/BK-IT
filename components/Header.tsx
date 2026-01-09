@@ -24,7 +24,7 @@ export const Header = () => {
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
           <Link to="/#about" className={styles.navLink}>About Us</Link>
-          <Link to="/#solutions" className={styles.navLink}>Services</Link>
+          <Link to="/#services" className={styles.navLink}>Services</Link>
           <Link to="/#partners" className={styles.navLink}>Partners</Link>
           <Link to="/#testimonials" className={styles.navLink}>Testimonials</Link>
           <Link to="/#contact" className={styles.navLink}>Contact</Link>
