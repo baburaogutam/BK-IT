@@ -4,7 +4,7 @@
 
 .statsSection {
   width: 100%;
-  padding: var(--spacing-20) 0 var(--spacing-24);
+  padding: var(--spacing-20) 0 var(--spacing-14);
   background: linear-gradient(
     180deg,
     var(--background) 0%,
@@ -111,7 +111,7 @@
 
 .statsOutro {
   max-width: 680px;
-  margin: var(--spacing-12) auto 0;
+  margin: var(--spacing-8) auto 0;
   text-align: center;
 }
 
