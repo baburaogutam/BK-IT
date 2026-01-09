@@ -1,14 +1,6 @@
-/* =========================
-   Section
-========================= */
-
 .section {
   padding: 5rem 0;
-  background: linear-gradient(
-    180deg,
-    var(--background),
-    var(--surface)
-  );
+  background: linear-gradient(180deg, var(--background), var(--surface));
 }
 
 .container {
@@ -17,9 +9,7 @@
   padding: 0 1.5rem;
 }
 
-/* =========================
-   Header
-========================= */
+/* Header */
 
 .header {
   text-align: center;
@@ -35,13 +25,10 @@
 
 .header p {
   color: var(--muted-foreground);
-  font-size: 1.05rem;
   line-height: 1.7;
 }
 
-/* =========================
-   Grid
-========================= */
+/* Grid */
 
 .grid {
   display: grid;
@@ -49,12 +36,11 @@
   gap: 2rem;
 }
 
-/* =========================
-   Card
-========================= */
+/* Card */
 
 .card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border-radius: 20px;
   padding: 2.2rem;
@@ -62,33 +48,44 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card::before {
-  content: "“";
-  position: absolute;
-  top: 14px;
-  right: 20px;
-  font-size: 4.5rem;
-  color: var(--primary);
-  opacity: 0.08;
-  line-height: 1;
-}
-
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.1);
 }
 
-/* =========================
-   Tag
-========================= */
+/* Name Block */
+
+.nameBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nameBlock h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nameBlock p {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.nameBlock span {
+  color: var(--foreground);
+}
+
+/* Badge */
 
 .tag {
-  display: inline-block;
+  align-self: flex-start;
   padding: 6px 14px;
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .student {
@@ -106,55 +103,22 @@
   color: #c2410c;
 }
 
-/* =========================
-   Content
-========================= */
+/* Review Content */
 
 .content {
   font-size: 0.95rem;
   line-height: 1.75;
   color: var(--foreground);
-  margin-bottom: 2rem;
+  margin-top: auto; /* ensures equal height */
 }
 
-/* =========================
-   Footer
-========================= */
-
-.footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.footer h4 {
-  margin: 0;
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.footer p {
-  font-size: 0.8rem;
-  color: var(--muted-foreground);
-}
-
-.footer span {
-  color: var(--foreground);
-}
-
-/* =========================
-   Tablet
-========================= */
+/* Responsive */
 
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* =========================
-   Mobile
-========================= */
 
 @media (max-width: 640px) {
   .section {
@@ -163,9 +127,5 @@
 
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 1.8rem;
   }
 }
