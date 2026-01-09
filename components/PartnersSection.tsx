@@ -92,7 +92,7 @@ export const PartnersSection = () => {
   const academicPartners = partners.filter(p => p.type === "academic");
 
   return (
-    <section className={styles.partnersSection}>
+    <section id="partners" className={styles.partnersSection}>
       <div className={styles.container}>
         {/* =========================
            Header
