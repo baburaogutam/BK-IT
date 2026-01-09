@@ -54,7 +54,7 @@ export const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className={styles.statsSection}>
+    <section ref={ref}  id="about" className={styles.statsSection}>
       {/* =========================
          Top Context
       ========================= */}
