@@ -56,8 +56,11 @@
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--foreground);
-  margin: var(--spacing-18) auto var(--spacing-10);
+
+  /* FIXED SPACING */
+  margin: var(--spacing-18) auto var(--spacing-14);
 }
+
 
 /* =========================
    Unified Carousel
@@ -67,8 +70,11 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  margin-bottom: var(--spacing-20);
+
+  /* FIXED SPACING */
+  padding-top: var(--spacing-4);
 }
+
 
 .carouselTrack {
   display: flex;
