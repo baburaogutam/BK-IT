@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./TestimonialsSection.module.css";
-import { Quote } from "lucide-react";
 import { Avatar, AvatarFallback } from "./Avatar";
-import { Badge } from "./Badge";
 
 const testimonials = [
   {
@@ -12,7 +10,7 @@ const testimonials = [
     company: "Google",
     type: "student",
     content:
-      "BKIT Solutions transformed my career trajectory. Their structured training and placement support helped me confidently land my first role. The mentorship and guidance were exceptional.",
+      "BKIT Solutions transformed my career trajectory. Their structured training and placement support helped me confidently land my first role.",
   },
   {
     id: 2,
@@ -21,7 +19,7 @@ const testimonials = [
     company: "Vemu Engineering College",
     type: "college",
     content:
-      "BKIT Solutions has significantly improved our students’ industry readiness. Their outcome-driven programs consistently deliver measurable placement success.",
+      "BKIT Solutions has significantly improved our students’ industry readiness with measurable placement success.",
   },
   {
     id: 3,
@@ -30,7 +28,7 @@ const testimonials = [
     company: "PRM360",
     type: "corporate",
     content:
-      "Their corporate training programs are well-structured, relevant, and impactful. We’ve seen measurable improvements in team productivity and technical confidence.",
+      "Well-structured and impactful corporate training programs that delivered real productivity gains.",
   },
   {
     id: 4,
@@ -39,7 +37,7 @@ const testimonials = [
     company: "Value Momentum",
     type: "student",
     content:
-      "The real-world projects and interview preparation at BKIT gave me confidence and clarity. I could clearly see the difference in how I approached interviews.",
+      "The real-world projects and interview preparation gave me confidence and clarity during placements.",
   },
   {
     id: 5,
@@ -48,7 +46,7 @@ const testimonials = [
     company: "RGM College",
     type: "college",
     content:
-      "BKIT Solutions has redefined how we prepare students for industry. Their industry connect programs and hackathons created genuine exposure and opportunity.",
+      "Industry connect programs and hackathons created genuine exposure and opportunities for students.",
   },
   {
     id: 6,
@@ -57,11 +55,11 @@ const testimonials = [
     company: "HCL Technologies",
     type: "corporate",
     content:
-      "Their trainers strike the perfect balance between theory and practical application. A reliable partner for long-term skill development.",
+      "A reliable long-term partner balancing theory with strong practical application.",
   },
 ];
 
-const getBadge = (type: string) => {
+const getTypeLabel = (type: string) => {
   if (type === "student") return "Student Success";
   if (type === "college") return "Academic Partner";
   return "Corporate Partner";
@@ -69,20 +67,26 @@ const getBadge = (type: string) => {
 
 export const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className={styles.section}>
+    <section className={styles.section}>
       <div className={styles.container}>
         <header className={styles.header}>
-          <h2 className={styles.title}>Trusted by Students, Colleges & Corporates</h2>
-          <p className={styles.subtitle}>
-            Real experiences from those who have partnered with BKIT Solutions
-            to achieve measurable outcomes.
+          <h2>Trusted by Students, Colleges & Corporates</h2>
+          <p>
+            Honest experiences from learners, institutions, and industry partners
+            who achieved measurable outcomes with BKIT Solutions.
           </p>
         </header>
 
         <div className={styles.grid}>
           {testimonials.map((t) => (
-            <div key={t.id} className={styles.card}>
-              <div className={styles.cardHeader}>
+            <article key={t.id} className={styles.card}>
+              <span className={`${styles.tag} ${styles[t.type]}`}>
+                {getTypeLabel(t.type)}
+              </span>
+
+              <p className={styles.content}>"{t.content}"</p>
+
+              <div className={styles.footer}>
                 <Avatar>
                   <AvatarFallback>
                     {t.name
@@ -92,20 +96,14 @@ export const TestimonialsSection = () => {
                   </AvatarFallback>
                 </Avatar>
 
-                <div className={styles.author}>
+                <div>
                   <h4>{t.name}</h4>
-                  <p className={styles.role}>{t.role}</p>
-                  <p className={styles.company}>{t.company}</p>
+                  <p>
+                    {t.role} · <span>{t.company}</span>
+                  </p>
                 </div>
-
-                <Badge variant="outline">{getBadge(t.type)}</Badge>
               </div>
-
-              <div className={styles.quote}>
-                <Quote size={18} />
-                <p>{t.content}</p>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
