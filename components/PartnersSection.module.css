@@ -44,23 +44,27 @@
 }
 
 /* =========================
-   Section Titles
+   Section Titles (FIXED)
 ========================= */
 
 .sectionTitle {
+  width: 100%;
   text-align: center;
   font-family: var(--font-family-heading);
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--foreground);
-  margin: var(--spacing-16) 0 var(--spacing-8);
+  margin: var(--spacing-18) auto var(--spacing-10);
+  position: relative;
+  z-index: 2;
 }
 
 /* =========================
-   Unified Carousel (Hiring + Tech)
+   Unified Carousel
 ========================= */
 
 .carouselWrapper {
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -69,9 +73,11 @@
   display: flex;
   gap: var(--spacing-10);
   width: max-content;
-  animation: scroll 40s linear infinite;
+  animation: scroll 38s linear infinite;
+  will-change: transform;
 }
 
+/* Logo Card */
 .carouselItem {
   min-width: 180px;
   height: 90px;
@@ -81,16 +87,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* LOGOS — bold by default */
 .carouselItem img {
-  max-height: 40px;
+  max-height: 42px;
   max-width: 120px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.85;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+
+  /* FIX: remove dull look */
+  filter: none;
+  opacity: 1;
+
+  transition: transform 0.25s ease;
 }
 
 .carouselItem:hover {
@@ -99,8 +109,7 @@
 }
 
 .carouselItem:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
+  transform: scale(1.05);
 }
 
 @keyframes scroll {
@@ -113,14 +122,14 @@
 }
 
 /* =========================
-   Academic Partners (Stable Grid)
+   Academic Partners Grid
 ========================= */
 
 .academicGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-8);
-  margin-top: var(--spacing-10);
+  margin-top: var(--spacing-12);
 }
 
 .academicCard {
@@ -152,33 +161,27 @@
 }
 
 /* =========================
-   Hire From BKIT CTA
+   Hire From BKIT CTA (CYAN)
 ========================= */
 
 .hireCTA {
   margin-top: var(--spacing-20);
   border-radius: var(--radius-xl);
-
-  /* Solid cyan background */
   background: var(--primary);
-
   border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
   box-shadow: 0 24px 48px rgba(14, 165, 233, 0.28);
-
   position: relative;
   overflow: hidden;
 }
 
-
-/* subtle highlight overlay */
 .hireCTA::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.08),
-    transparent 60%
+    rgba(255, 255, 255, 0.1),
+    transparent 65%
   );
   pointer-events: none;
 }
@@ -192,7 +195,6 @@
   z-index: 1;
 }
 
-/* Title */
 .hireTitle {
   font-family: var(--font-family-heading);
   font-size: 2.25rem;
@@ -201,7 +203,6 @@
   margin-bottom: var(--spacing-4);
 }
 
-/* Description */
 .hireDescription {
   font-size: 1.05rem;
   line-height: 1.65;
@@ -209,7 +210,6 @@
   margin-bottom: var(--spacing-8);
 }
 
-/* Actions */
 .hireActions {
   display: flex;
   gap: var(--spacing-4);
@@ -225,7 +225,6 @@
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
-
   box-shadow: 0 14px 32px rgba(255, 255, 255, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -244,26 +243,10 @@
   font-weight: 500;
   text-decoration: none;
   background: transparent;
-  transition: background 0.2s ease;
 }
 
 .secondaryBtn:hover {
   background: rgba(255, 255, 255, 0.12);
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  .hireInner {
-    padding: var(--spacing-12) var(--spacing-6);
-  }
-
-  .hireTitle {
-    font-size: 1.9rem;
-  }
-
-  .hireDescription {
-    font-size: 0.95rem;
-  }
 }
 
 /* =========================
@@ -273,6 +256,10 @@
 @media (max-width: 768px) {
   .title {
     font-size: 2.3rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
   }
 
   .carouselItem {
@@ -287,6 +274,10 @@
   }
 
   .hireTitle {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
+  }
+
+  .hireDescription {
+    font-size: 0.95rem;
   }
 }
