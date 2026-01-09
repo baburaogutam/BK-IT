@@ -35,9 +35,9 @@ export default function IndexPage() {
           <Separator className={styles.separator} />
           <DetailedServicesSection />
           <Separator className={styles.separator} />
-          <TestimonialsSection />
+           <PartnersSection />
           <Separator className={styles.separator} />
-          <PartnersSection />
+           <TestimonialsSection />
           <Separator className={styles.separator} />
           <ContactSection />
         </main>
