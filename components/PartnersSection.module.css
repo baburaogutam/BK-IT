@@ -72,8 +72,8 @@
   position: relative;
 
   /* FIXED SPACING */
-  padding-top: var(--spacing-4);
-   margin-bottom: var(--spacing-20);
+  padding-top: var(--spacing-10);
+   margin-bottom: var(--spacing-10);
 }
 
 
