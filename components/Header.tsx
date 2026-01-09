@@ -33,12 +33,12 @@ export const Header = () => {
         {/* Desktop Actions */}
         <div className={styles.actions}>
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/#">LMS</Link>
+            <Link to="/#" className={styles.navLink}>LMS</Link>
           </Button>
 
           {/* Increased padding on desktop */}
           <Button size="md" asChild>
-            <Link to="/jobs">Job Portal</Link>
+            <Link to="/jobs">Explore Jobs</Link>
           </Button>
         </div>
 
@@ -72,7 +72,7 @@ export const Header = () => {
                 </Button>
 
                 <Button size="lg" asChild>
-                  <Link to="/jobs" onClick={closeMobileMenu}>Job Portal</Link>
+                  <Link to="/jobs" onClick={closeMobileMenu}>Explore Jobs</Link>
                 </Button>
               </div>
             </div>
