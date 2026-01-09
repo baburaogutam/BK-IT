@@ -11,12 +11,13 @@
   );
   position: relative;
   overflow: hidden;
+  padding: var(--spacing-24) 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--spacing-18) var(--spacing-6);
+  padding: 0 var(--spacing-6);
 }
 
 /* =========================
@@ -26,7 +27,8 @@
 .header {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto var(--spacing-18);
+  margin: 0 auto;
+  padding-bottom: var(--spacing-18);
 }
 
 .title {
@@ -34,17 +36,17 @@
   font-size: 3rem;
   font-weight: 700;
   color: var(--foreground);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
 }
 
 .subtitle {
   font-size: 1.1rem;
   color: var(--muted-foreground);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* =========================
-   Section Titles (FIXED)
+   Section Titles
 ========================= */
 
 .sectionTitle {
@@ -55,8 +57,6 @@
   font-weight: 600;
   color: var(--foreground);
   margin: var(--spacing-18) auto var(--spacing-10);
-  position: relative;
-  z-index: 2;
 }
 
 /* =========================
@@ -67,6 +67,7 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  margin-bottom: var(--spacing-20);
 }
 
 .carouselTrack {
@@ -77,7 +78,6 @@
   will-change: transform;
 }
 
-/* Logo Card */
 .carouselItem {
   min-width: 180px;
   height: 90px;
@@ -90,16 +90,13 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* LOGOS — bold by default */
+/* LOGOS — bold & original by default */
 .carouselItem img {
   max-height: 42px;
   max-width: 120px;
   object-fit: contain;
-
-  /* FIX: remove dull look */
   filter: none;
   opacity: 1;
-
   transition: transform 0.25s ease;
 }
 
@@ -165,7 +162,7 @@
 ========================= */
 
 .hireCTA {
-  margin-top: var(--spacing-20);
+  margin-top: var(--spacing-24);
   border-radius: var(--radius-xl);
   background: var(--primary);
   border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
@@ -180,7 +177,7 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.12),
     transparent 65%
   );
   pointer-events: none;
