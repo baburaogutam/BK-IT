@@ -22,7 +22,7 @@ Developing mobile apps for smartphones and tablets
 Our hiring partners include top companies
 Content and images should refer to India and Indians 
 Reach us at:
-Email : bkitsolutions1000cr@gmail.com
+Email : info@bkitsolutions.in
 website : bkitsolutions.in
 Contact : +91 8121034516
 
